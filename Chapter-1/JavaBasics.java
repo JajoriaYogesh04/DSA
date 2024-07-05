@@ -69,9 +69,16 @@ public class JavaBasics{
         // float area= 3.14f * r * r;
         // System.out.println(area);
 
-        float a= 10;    //Type conversion
-        double b= a;
-        System.out.println(b);
+        // float a= 10;    //Type conversion
+        // double b= a;
+        // System.out.println(b);
 
+        // float marks= 99.999f;   //Type casting
+        // int marks2= (int)marks;
+        // System.out.println(marks2);
+
+        char char1= 'Z';
+        int num1= char1;
+        System.out.println(num1);
     }
 }
