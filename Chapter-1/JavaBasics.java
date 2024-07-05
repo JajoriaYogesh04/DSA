@@ -100,7 +100,7 @@ public class JavaBasics{
         // System.out.println(exp);
 
         byte b= 5;
-        byte c= (byte)(b*10);
-        System.out.println(c);
+        b= (byte)(b*10);
+        System.out.println(b);
     }
 }
