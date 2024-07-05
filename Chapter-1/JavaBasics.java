@@ -40,19 +40,24 @@ public class JavaBasics{
         // int sum= a+b;
         // System.out.println(sum);
 
-        String input= sc.next();
-        System.out.println(input);
+        // String input= sc.next();
+        // System.out.println(input);
 
-        String input2= sc.nextLine();
-        System.out.println(input2);
+        // String input2= sc.nextLine();
+        // System.out.println(input2);
 
-        int input3= sc.nextInt();
-        System.out.println(input3);
+        // int input3= sc.nextInt();
+        // System.out.println(input3);
 
-        float input4= sc.nextFloat();
-        System.out.println(input4);
+        // float input4= sc.nextFloat();
+        // System.out.println(input4);
 
-        boolean input5= sc.nextBoolean();
-        System.out.println(input5);
+        // boolean input5= sc.nextBoolean();
+        // System.out.println(input5);
+
+        int a= sc.nextInt();
+        int b= sc.nextInt();
+        int sum= a+b;
+        System.out.println(sum);
     }
 }
