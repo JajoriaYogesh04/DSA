@@ -65,8 +65,13 @@ public class JavaBasics{
         // int product= a*b;
         // System.out.println(product);
 
-        float r= sc.nextFloat();
-        float area= 3.14f * r * r;
-        System.out.println(area);
+        // float r= sc.nextFloat();
+        // float area= 3.14f * r * r;
+        // System.out.println(area);
+
+        float a= 10;    //Type conversion
+        double b= a;
+        System.out.println(b);
+
     }
 }
