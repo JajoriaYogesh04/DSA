@@ -55,9 +55,14 @@ public class JavaBasics{
         // boolean input5= sc.nextBoolean();
         // System.out.println(input5);
 
-        int a= sc.nextInt();
+        // int a= sc.nextInt();    //Sum of two numbers using user input
+        // int b= sc.nextInt();
+        // int sum= a+b;
+        // System.out.println(sum);
+
+        int a= sc.nextInt();    //Product of two numbers
         int b= sc.nextInt();
-        int sum= a+b;
-        System.out.println(sum);
+        int product= a*b;
+        System.out.println(product);
     }
 }
