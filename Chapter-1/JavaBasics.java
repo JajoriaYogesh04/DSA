@@ -60,9 +60,13 @@ public class JavaBasics{
         // int sum= a+b;
         // System.out.println(sum);
 
-        int a= sc.nextInt();    //Product of two numbers
-        int b= sc.nextInt();
-        int product= a*b;
-        System.out.println(product);
+        // int a= sc.nextInt();    //Product of two numbers
+        // int b= sc.nextInt();
+        // int product= a*b;
+        // System.out.println(product);
+
+        float r= sc.nextFloat();
+        float area= 3.14f * r * r;
+        System.out.println(area);
     }
 }
