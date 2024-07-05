@@ -1,5 +1,3 @@
-import javax.swing.plaf.synth.SynthStyle;
-
 public class JavaBasics{
     public static void main(String args[]){
         // System.out.println('Hello World');
@@ -23,15 +21,20 @@ public class JavaBasics{
         // System.out.println(b);
         // System.out.println(name);
 
-        byte a= 10;
-        boolean choice= true;
-        char ch = 'a';
-        int num= 4546;
-        double num2= 3.145576798;
-        System.out.println(a);
-        System.out.println(choice);
-        System.out.println(ch);
-        System.out.println(num);
-        System.out.println(num2);
+        // byte a= 10;
+        // boolean choice= true;
+        // char ch = 'a';
+        // int num= 4546;
+        // double num2= 3.145576798;
+        // System.out.println(a);
+        // System.out.println(choice);
+        // System.out.println(ch);
+        // System.out.println(num);
+        // System.out.println(num2);
+
+        int a= 30;
+        int b= 20;
+        int sum= a+b;
+        System.out.println(sum);
     }
 }
