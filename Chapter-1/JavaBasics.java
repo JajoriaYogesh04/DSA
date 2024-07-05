@@ -77,8 +77,30 @@ public class JavaBasics{
         // int marks2= (int)marks;
         // System.out.println(marks2);
 
-        char char1= 'Z';
-        int num1= char1;
-        System.out.println(num1);
+        // char char1= 'Z';
+        // int num1= char1;
+        // System.out.println(num1);
+
+        // char a= 'a';    //Type prometion in expression
+        // char b= 'b';
+        // char diff= b-a;
+        // System.out.println(diff);
+
+        // short num1= 5;
+        // byte num2= 10;
+        // char char1= 'z';
+        // byte exp= (byte)(num1+num2+char1);
+        // System.out.println(exp);
+
+        // int num1= 25;
+        // long num2= 50;
+        // float num3= 10.55f;
+        // double num4= 100;
+        // int exp= (int)(num1+num2+num3+num4);
+        // System.out.println(exp);
+
+        byte b= 5;
+        byte c= (byte)(b*10);
+        System.out.println(c);
     }
 }
