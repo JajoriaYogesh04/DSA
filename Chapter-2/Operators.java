@@ -38,11 +38,15 @@ public class Operators {
         // System.out.println(! true);
         // System.out.println(! false);
 
-        int a=10;       //Assignment operators
-        System.out.println(a+=5);
-        System.out.println(a-=10);
-        System.out.println(a*=5);
-        System.out.println(a/=5);
-        System.out.println(a%=5);
+        // int a=10;       //Assignment operators
+        // System.out.println(a+=5);
+        // System.out.println(a-=10);
+        // System.out.println(a*=5);
+        // System.out.println(a/=5);
+        // System.out.println(a%=5);
+
+        // int a=2;
+        // int b=5;
+        System.out.println(4/3*43);
     }
 }
