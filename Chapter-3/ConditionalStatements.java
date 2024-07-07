@@ -31,15 +31,30 @@ public class ConditionalStatements {
         //     System.out.println("ODD");
         // }
 
-        int age= sc.nextInt();      //Else-if
-        if(age>=18){
-            System.out.println("ADULT");
+        // int age= sc.nextInt();      //Else-if
+        // if(age>=18){
+        //     System.out.println("ADULT");
+        // }
+        // else if(age>=13 && age<18){
+        //     System.out.println("TEENAGER");
+        // }
+        // else{
+        //     System.out.println("CHILD");
+        // }
+
+        int income= sc.nextInt();       //Income tax calculator
+        float tax=0;
+        if(income<500000){
+            tax=0;
+            System.out.println("Tax: "+ tax);
         }
-        else if(age>=13 && age<18){
-            System.out.println("TEENAGER");
+        else if(income>=500000 && income<1000000){
+            tax=(0.20f*income);
+            System.out.println("Tax: "+ tax);
         }
         else{
-            System.out.println("CHILD");
+            tax=(0.30f*income);
+            System.out.println("Tax: "+ tax);
         }
     }
 }
