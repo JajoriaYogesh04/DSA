@@ -23,12 +23,23 @@ public class ConditionalStatements {
         //     System.out.println("LARGEST: B");
         // }
 
-        int num= sc.nextInt();     //Even and odd numbers
-        if(num%2==0){
-            System.out.println("EVEN");
+        // int num= sc.nextInt();     //Even and odd numbers
+        // if(num%2==0){
+        //     System.out.println("EVEN");
+        // }
+        // else{
+        //     System.out.println("ODD");
+        // }
+
+        int age= sc.nextInt();      //Else-if
+        if(age>=18){
+            System.out.println("ADULT");
+        }
+        else if(age>=13 && age<18){
+            System.out.println("TEENAGER");
         }
         else{
-            System.out.println("ODD");
+            System.out.println("CHILD");
         }
     }
 }
