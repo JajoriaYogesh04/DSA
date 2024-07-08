@@ -95,16 +95,35 @@
 // }
 
 
-import java.util.Scanner;       
+// import java.util.Scanner;       
+// public class ConditionalStatements{
+//     public static void main(String args[]){
+//         Scanner sc= new Scanner(System.in);
+//         // int number= sc.nextInt();        //Ternary Operators
+//         // String type= (number%2 == 0)?"EVEN":"ODD";
+//         // System.out.println(type);
+        
+//         int marks= sc.nextInt();            //Pass-fail
+//         String result= (marks>33)?"PASS":"FAIL";
+//         System.out.println(result);
+//     }
+// }
+
+
+import java.util.*;
 public class ConditionalStatements{
     public static void main(String args[]){
         Scanner sc= new Scanner(System.in);
-        // int number= sc.nextInt();        //Ternary Operators
-        // String type= (number%2 == 0)?"EVEN":"ODD";
-        // System.out.println(type);
-        
-        int marks= sc.nextInt();            //Pass-fail
-        String result= (marks>33)?"PASS":"FAIL";
-        System.out.println(result);
+
+        int choice=sc.nextInt();            //Switch Statements
+        switch (choice) {
+            case 1: System.out.println("Pizza");
+            break;
+            case 2: System.out.println("Burger");
+            break;
+            case 3: System.out.println("Mango Shek");
+            break;
+            default: System.out.println("Wake up to reality");
+        }
     }
 }
