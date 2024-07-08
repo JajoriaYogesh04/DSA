@@ -115,15 +115,36 @@ public class ConditionalStatements{
     public static void main(String args[]){
         Scanner sc= new Scanner(System.in);
 
-        int choice=sc.nextInt();            //Switch Statements
+        // int choice=sc.nextInt();            //Switch Statements
+        // switch (choice) {
+        //     case 1: System.out.println("Pizza");
+        //     break;
+        //     case 2: System.out.println("Burger");
+        //     break;
+        //     case 3: System.out.println("Mango Shek");
+        //     break;
+        //     default: System.out.println("Wake up to reality");
+        // }
+
+        System.out.print("Enter A: ");      //Calculator
+        int a= sc.nextInt();
+        System.out.print("Enter B: ");
+        int b= sc.nextInt();
+        System.out.print("Enter Operator: ");
+        char choice= sc.next().charAt(0);
         switch (choice) {
-            case 1: System.out.println("Pizza");
-            break;
-            case 2: System.out.println("Burger");
-            break;
-            case 3: System.out.println("Mango Shek");
-            break;
-            default: System.out.println("Wake up to reality");
+            case '+':System.out.println(a+b);
+                break;
+            case '-':System.out.println(a-b);
+                break;
+            case '*':System.out.println(a*b);
+                break;
+            case '/':System.out.println(a/b);
+                break;
+            case '%':System.out.println(a%b);
+                break;
+            default: System.out.println("ERROR: CHECK INPUT");
+                break;
         }
     }
 }
