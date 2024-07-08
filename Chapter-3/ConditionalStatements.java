@@ -59,37 +59,52 @@
 //     }
 // }
 
+// import java.util.Scanner;       //Largest of three numbers       
+// public class ConditionalStatements {
+//     public static void main(String args[]) {
+//         Scanner sc= new Scanner(System.in);
+//         int a= sc.nextInt();
+//         int b= sc.nextInt();
+//         int c= sc.nextInt();
+//         // if(a<b){
+//         //     if(b>c){
+//         //         System.out.println("Greatest: B");
+//         //     }
+//         //     else if(c>b){
+//         //         System.out.println("Greatest: C");
+//         //     }
+//         // }
+//         // else if(a>b){
+//         //     if(a>c){
+//         //         System.out.println("Greatest: A");
+//         //     }
+//         //     else if(c>a){
+//         //         System.out.println("Greatest: C");
+//         //     }
+//         // }
+//         if((a>=b) && (a>=c)){
+//             System.out.println("Greatest: A");
+//         }
+//         else if(b>=c){
+//             System.out.println("Greatest: B");
+//         }
+//         else{
+//             System.out.println("Greatest: C");
+//         }
+//     }
+// }
+
+
 import java.util.Scanner;       
-public class ConditionalStatements {
-    public static void main(String args[]) {
+public class ConditionalStatements{
+    public static void main(String args[]){
         Scanner sc= new Scanner(System.in);
-        int a= sc.nextInt();
-        int b= sc.nextInt();
-        int c= sc.nextInt();
-        // if(a<b){
-        //     if(b>c){
-        //         System.out.println("Greatest: B");
-        //     }
-        //     else if(c>b){
-        //         System.out.println("Greatest: C");
-        //     }
-        // }
-        // else if(a>b){
-        //     if(a>c){
-        //         System.out.println("Greatest: A");
-        //     }
-        //     else if(c>a){
-        //         System.out.println("Greatest: C");
-        //     }
-        // }
-        if((a>=b) && (a>=c)){
-            System.out.println("Greatest: A");
-        }
-        else if(b>=c){
-            System.out.println("Greatest: B");
-        }
-        else{
-            System.out.println("Greatest: C");
-        }
+        // int number= sc.nextInt();        //Ternary Operators
+        // String type= (number%2 == 0)?"EVEN":"ODD";
+        // System.out.println(type);
+        
+        int marks= sc.nextInt();            //Pass-fail
+        String result= (marks>33)?"PASS":"FAIL";
+        System.out.println(result);
     }
 }
