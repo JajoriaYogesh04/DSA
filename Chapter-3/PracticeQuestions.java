@@ -25,24 +25,41 @@ public class PracticeQuestions {
         //     System.out.println("You don't have fever");
         // }
 
-        System.out.print("Enter week day number: ");        //Practice Question 3
-        int day= sc.nextInt();
-        switch(day){
-            case 1: System.out.println("Sunday");
-            break;
-            case 2: System.out.println("Monday");
-            break;
-            case 3: System.out.println("Tuesday");
-            break;
-            case 4: System.out.println("Wednesday");
-            break;
-            case 5: System.out.println("Thursday");
-            break;
-            case 6: System.out.println("Friday");
-            break;
-            case 7: System.out.println("Saturday");
-            break;
-            default: System.out.println("ERROR: Check input");
+        // System.out.print("Enter week day number: ");        //Practice Question 3
+        // int day= sc.nextInt();
+        // switch(day){
+        //     case 1: System.out.println("Sunday");
+        //     break;
+        //     case 2: System.out.println("Monday");
+        //     break;
+        //     case 3: System.out.println("Tuesday");
+        //     break;
+        //     case 4: System.out.println("Wednesday");
+        //     break;
+        //     case 5: System.out.println("Thursday");
+        //     break;
+        //     case 6: System.out.println("Friday");
+        //     break;
+        //     case 7: System.out.println("Saturday");
+        //     break;
+        //     default: System.out.println("ERROR: Check input");
+        // }
+
+        // int a = 63, b = 36;     //Practice Question 4
+        // boolean x = (a < b ) ? true : false;
+        // int y= (a > b ) ? a : b;
+        // System.out.println(x);
+        // System.out.println(y);
+
+        System.out.print("Enter year: ");
+        int year= sc.nextInt();
+        if(year % 4 == 0){
+            if(year % 100 !=0 || year % 400 == 0){
+                System.out.println("LEAP YEAR");
+            }
+            else{
+                System.out.println("NOT LEAP YEAR");
+            }
         }
     }
 }
