@@ -17,12 +17,35 @@ public class Loops {
         //     counter++;
         // }
 
-        System.out.print("Enter N: ");
+        // System.out.print("Enter N: ");      //Printing numbers 1 to n
+        // int n= sc.nextInt();
+        // int counter= 1;
+        // while (counter<=n) {
+        //     System.out.print(counter + " ");
+        //     counter++;
+        // }
+
+        // System.out.print("Enter N: ");      //Print sum of first n natural numbers
+        // int n= sc.nextInt();
+        // int sum= 0;
+        // int counter=1;
+        // while(counter<=n){
+        //     sum+=counter;
+        //     counter++;
+        // }
+        // System.out.println("Sum: " + sum);
+
+        // for(int i=1; i<=10; i++){       //For loop
+        //     System.out.println("Hello " + i);
+        // }
+
+        System.out.print("Enter N: ");      //Printing square pattern
         int n= sc.nextInt();
-        int counter= 1;
-        while (counter<=n) {
-            System.out.print(counter + " ");
-            counter++;
+        for(int i=1; i<=n; i++){
+            for(int j=1; j<=n; j++){
+                System.out.print(" [] ");
+            }
+            System.out.println();
         }
     }
 }
