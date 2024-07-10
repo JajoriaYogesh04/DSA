@@ -48,13 +48,22 @@ public class Loops {
         //     System.out.println();
         // }
 
+        // System.out.print("Enter number: ");         //Print reverse of a number 
+        // int num= sc.nextInt();
+        // int rev= 0;
+        // while (num > 0) {
+        //     rev= num%10;
+        //     num/=10;
+        //     System.out.print(rev);
+        // }
+
         System.out.print("Enter number: ");         //Print reverse of a number 
         int num= sc.nextInt();
         int rev= 0;
         while (num > 0) {
-            rev= num%10;
+            rev= (rev*10)+num%10;
             num/=10;
-            System.out.print(rev);
         }
+        System.out.print(rev);
     }
 }
