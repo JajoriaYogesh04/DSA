@@ -97,14 +97,35 @@ public class Loops {
         //     System.out.println(i);
         // }
 
-        int num;            //Example continue keyword
-        do{
-            System.out.print("Enter number: ");
-            num= sc.nextInt();
-            if(num%10==0){
-                continue;
+        // int num;            //Example continue keyword
+        // do{
+        //     System.out.print("Enter number: ");
+        //     num= sc.nextInt();
+        //     if(num%10==0){
+        //         continue;
+        //     }
+        //     System.out.println(num);
+        // }while(true);
+
+        System.out.print("Enter number: ");         //Check if number is prime or not
+        int num= sc.nextInt();
+        boolean isPrime= true;
+        for(int i=2; i<Math.sqrt(num); i++){
+            if(num%i==0){
+                // System.out.println("Not Prime");
+                isPrime= false;
+                break;
             }
-            System.out.println(num);
-        }while(true);
+            else{
+                // System.out.println("Prime");
+                isPrime=true;
+            }
+        }
+        if(isPrime==true){
+            System.out.println("Prime");
+        }
+        else{
+            System.out.println("Not Prime");
+        }
     }
 }
