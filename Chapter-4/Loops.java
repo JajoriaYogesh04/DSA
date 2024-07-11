@@ -90,11 +90,21 @@ public class Loops {
         //     }
         // }while(true);
 
-        for(int i=1; i<=10; i++){           //continue statement
-            if(i==9){
+        // for(int i=1; i<=10; i++){           //continue statement
+        //     if(i==9){
+        //         continue;
+        //     }
+        //     System.out.println(i);
+        // }
+
+        int num;            //Example continue keyword
+        do{
+            System.out.print("Enter number: ");
+            num= sc.nextInt();
+            if(num%10==0){
                 continue;
             }
-            System.out.println(i);
-        }
+            System.out.println(num);
+        }while(true);
     }
 }
