@@ -22,11 +22,22 @@ public class Patterns {
         //     System.out.println();
         // }
 
-        System.out.print("Enter number: ");         //Half pyramid pattern
+        // System.out.print("Enter number: ");         //Half pyramid pattern
+        // int n= sc.nextInt();
+        // for(int i=1; i<=n; i++){
+        //     for(int j=1; j<=i; j++){
+        //         System.out.print(" "+j+" ");
+        //     }
+        //     System.out.println();
+        // }
+
+        char ch= (char)65;          //Character pattern
+        System.out.print("Enter Line: ");
         int n= sc.nextInt();
         for(int i=1; i<=n; i++){
             for(int j=1; j<=i; j++){
-                System.out.print(" "+j+" ");
+                System.out.print(ch);
+                ch++;
             }
             System.out.println();
         }
