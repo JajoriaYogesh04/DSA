@@ -66,10 +66,28 @@ public class Loops {
         // }
         // System.out.print(rev);
 
-        int counter=1;          //Do-while loop
+        // int counter=1;          //Do-while loop
+        // do{
+        //     System.out.println("Hello World " + counter);
+        //     counter++;
+        // }while(counter<=10);
+
+        // for(int i=1; i<=10; i++){           //Break Statement
+        //     if(i==3){
+        //         System.out.println("I am OUT");
+        //         break;
+        //     }
+        //     System.out.println(i);
+        // }
+
+        int num;            //Example break keyword
         do{
-            System.out.println("Hello World " + counter);
-            counter++;
-        }while(counter<=10);
+            System.out.print("Enter number: ");
+            num= sc.nextInt();
+            if(num%10 == 0){
+                System.out.println(num + " is multiple of 10");
+                break;
+            }
+        }while(true);
     }
 }
