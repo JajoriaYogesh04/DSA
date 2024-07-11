@@ -24,12 +24,18 @@ public class PracticeQuestions {
         // System.out.println("Even Sum: "+evenSum);
         // System.out.println("Odd Sum: "+oddSum);
 
-        System.out.print("Enter Number: ");         //Practice Question 2
+        // System.out.print("Enter Number: ");         //Practice Question 2
+        // int num= sc.nextInt();
+        // int fact=1;
+        // for(int i=1; i<=num; i++){
+        //     fact*=i;
+        // }
+        // System.out.println("Factorial: "+fact);
+
+        System.out.print("Enter Number: ");
         int num= sc.nextInt();
-        int fact=1;
-        for(int i=1; i<=num; i++){
-            fact*=i;
+        for(int i=1; i<=10; i++){
+            System.out.println(num+" x "+i+" = "+num*i);
         }
-        System.out.println("Factorial: "+fact);
     }
 }
