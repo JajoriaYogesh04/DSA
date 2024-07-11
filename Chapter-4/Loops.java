@@ -57,13 +57,19 @@ public class Loops {
         //     System.out.print(rev);
         // }
 
-        System.out.print("Enter number: ");         //Print reverse of a number 
-        int num= sc.nextInt();
-        int rev= 0;
-        while (num > 0) {
-            rev= (rev*10)+num%10;
-            num/=10;
-        }
-        System.out.print(rev);
+        // System.out.print("Enter number: ");         //reverse a number 
+        // int num= sc.nextInt();
+        // int rev= 0;
+        // while (num > 0) {
+        //     rev= (rev*10)+num%10;
+        //     num/=10;
+        // }
+        // System.out.print(rev);
+
+        int counter=1;          //Do-while loop
+        do{
+            System.out.println("Hello World " + counter);
+            counter++;
+        }while(counter<=10);
     }
 }
