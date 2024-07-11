@@ -116,10 +116,6 @@ public class Loops {
                 isPrime= false;
                 break;
             }
-            else{
-                // System.out.println("Prime");
-                isPrime=true;
-            }
         }
         if(isPrime==true){
             System.out.println("Prime");

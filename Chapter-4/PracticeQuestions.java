@@ -32,7 +32,7 @@ public class PracticeQuestions {
         // }
         // System.out.println("Factorial: "+fact);
 
-        System.out.print("Enter Number: ");
+        System.out.print("Enter Number: ");         //Practice Question 3
         int num= sc.nextInt();
         for(int i=1; i<=10; i++){
             System.out.println(num+" x "+i+" = "+num*i);
