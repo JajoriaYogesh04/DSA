@@ -80,14 +80,21 @@ public class Loops {
         //     System.out.println(i);
         // }
 
-        int num;            //Example break keyword
-        do{
-            System.out.print("Enter number: ");
-            num= sc.nextInt();
-            if(num%10 == 0){
-                System.out.println(num + " is multiple of 10");
-                break;
+        // int num;            //Example break keyword
+        // do{
+        //     System.out.print("Enter number: ");
+        //     num= sc.nextInt();
+        //     if(num%10 == 0){
+        //         System.out.println(num + " is multiple of 10");
+        //         break;
+        //     }
+        // }while(true);
+
+        for(int i=1; i<=10; i++){           //continue statement
+            if(i==9){
+                continue;
             }
-        }while(true);
+            System.out.println(i);
+        }
     }
 }
