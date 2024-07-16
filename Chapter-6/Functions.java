@@ -23,6 +23,11 @@ public class Functions{
         return;
     }
 
+    public static int multiply(int a, int b){
+        int product= a*b;
+        return product;
+    }
+
     public static void main(String args[]){
         Scanner sc= new Scanner(System.in);
 
@@ -35,12 +40,19 @@ public class Functions{
         // int sum= getSum(num1,num2);
         // System.out.println("Sum: "+ sum);
 
-        System.out.print("Enter first number: ");           //Swapping(Call by value)             
-        int a= sc.nextInt();
+        // System.out.print("Enter first number: ");           //Swapping(Call by value)             
+        // int a= sc.nextInt();
+        // System.out.print("Enter second number: ");
+        // int b= sc.nextInt();
+        // System.out.println(a+" "+b);
+        // swap(a, b);
+        // System.out.println(a+" "+b);
+
+        System.out.print("Enter first number: ");               //Product of two numbers
+        int num1= sc.nextInt();
         System.out.print("Enter second number: ");
-        int b= sc.nextInt();
-        System.out.println(a+" "+b);
-        swap(a, b);
-        System.out.println(a+" "+b);
+        int num2= sc.nextInt();
+        int mul= multiply(num1, num2);
+        System.out.println(num1+" x "+num2+" = "+mul);
     }
 }
