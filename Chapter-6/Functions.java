@@ -41,6 +41,14 @@ public class Functions{
         }
     }
 
+    public static int binomial(int n, int r){
+        int nfact= factorial(n);
+        int rfact= factorial(r);
+        int nrfact= factorial(n-r);
+        int coeff= (nfact)/(rfact*nrfact);
+        return coeff;
+    }
+
     public static void main(String args[]){
         Scanner sc= new Scanner(System.in);
 
@@ -68,9 +76,16 @@ public class Functions{
         // int mul= multiply(num1, num2);
         // System.out.println(num1+" x "+num2+" = "+mul);
 
-        System.out.print("Enter number: ");             //Factorial of number
-        int num= sc.nextInt();
-        int fact= factorial(num);
-        System.out.println(num+"!= "+fact);
+        // System.out.print("Enter number: ");             //Factorial of number
+        // int num= sc.nextInt();
+        // int fact= factorial(num);
+        // System.out.println(num+"!= "+fact);
+
+        System.out.print("n: ");                //Binomial Coefficient
+        int n= sc.nextInt();
+        System.out.print("r: ");
+        int r=sc.nextInt();
+        int binomialCoeff= binomial(n, r);
+        System.out.println(n+" C "+r+" = "+binomialCoeff);
     }
 }
