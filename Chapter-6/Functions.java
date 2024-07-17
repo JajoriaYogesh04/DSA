@@ -28,6 +28,19 @@ public class Functions{
         return product;
     }
 
+    public static int factorial(int n){
+        int fact= 1;
+        if(n<0){
+            return 0;
+        }
+        else{
+            for(int i=n; i>=1; i--){
+                fact=fact*i;
+            }
+            return fact;
+        }
+    }
+
     public static void main(String args[]){
         Scanner sc= new Scanner(System.in);
 
@@ -48,11 +61,16 @@ public class Functions{
         // swap(a, b);
         // System.out.println(a+" "+b);
 
-        System.out.print("Enter first number: ");               //Product of two numbers
-        int num1= sc.nextInt();
-        System.out.print("Enter second number: ");
-        int num2= sc.nextInt();
-        int mul= multiply(num1, num2);
-        System.out.println(num1+" x "+num2+" = "+mul);
+        // System.out.print("Enter first number: ");               //Product of two numbers
+        // int num1= sc.nextInt();
+        // System.out.print("Enter second number: ");
+        // int num2= sc.nextInt();
+        // int mul= multiply(num1, num2);
+        // System.out.println(num1+" x "+num2+" = "+mul);
+
+        System.out.print("Enter number: ");             //Factorial of number
+        int num= sc.nextInt();
+        int fact= factorial(num);
+        System.out.println(num+"!= "+fact);
     }
 }
