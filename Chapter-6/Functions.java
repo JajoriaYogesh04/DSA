@@ -89,6 +89,13 @@ public class Functions{
         return true;
     }
 
+    public static void printPrime(int n){
+        for(int i=2; i<=n; i++){
+            if(isPrime(i)==true){
+                System.out.print(" "+i+" ");
+            }
+        }
+    }
 
     public static void main(String args[]){
         Scanner sc= new Scanner(System.in);
@@ -135,15 +142,18 @@ public class Functions{
         // System.out.println(diff(9,5));           //Function overloading using data types
         // System.out.println(diff(15.4f,4.2f));
 
-        System.out.print("Enter number: ");         //Check if a number is prime or not
-        int n= sc.nextInt();
-        boolean isPrime= isPrime(n);
-        if(isPrime==true){
-            System.out.println("PRIME");
-        }
-        else{
-            System.out.println("NOT PRIME");
-        }
+        // System.out.print("Enter number: ");         //Check if a number is prime or not
+        // int n= sc.nextInt();
+        // boolean isPrime= isPrime(n);
+        // if(isPrime==true){
+        //     System.out.println("PRIME");
+        // }
+        // else{
+        //     System.out.println("NOT PRIME");
+        // }
 
+        System.out.print("Enter Number: ");         //Print primes in range
+        int n= sc.nextInt();
+        printPrime(n);
     }
 }
