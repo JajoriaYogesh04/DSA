@@ -49,6 +49,14 @@ public class Functions{
         return coeff;
     }
 
+    public static int sum(int a, int b){
+        return a+b;
+    }
+
+    public static int sum(int a, int b, int c){
+        return a+b+c;
+    }
+
     public static void main(String args[]){
         Scanner sc= new Scanner(System.in);
 
@@ -81,11 +89,14 @@ public class Functions{
         // int fact= factorial(num);
         // System.out.println(num+"!= "+fact);
 
-        System.out.print("n: ");                //Binomial Coefficient
-        int n= sc.nextInt();
-        System.out.print("r: ");
-        int r=sc.nextInt();
-        int binomialCoeff= binomial(n, r);
-        System.out.println(n+" C "+r+" = "+binomialCoeff);
+        // System.out.print("n: ");                //Binomial Coefficient
+        // int n= sc.nextInt();
+        // System.out.print("r: ");
+        // int r=sc.nextInt();
+        // int binomialCoeff= binomial(n, r);
+        // System.out.println(n+" C "+r+" = "+binomialCoeff);
+
+        System.out.println(sum(5,9));           //Function overloading using parameters
+        System.out.println(sum(7,6,5));
     }
 }
