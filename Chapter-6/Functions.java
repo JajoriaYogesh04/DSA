@@ -57,6 +57,14 @@ public class Functions{
         return a+b+c;
     }
 
+    public static int diff(int a, int b){
+        return a-b;
+    }
+
+    public static float diff(float a, float b){
+        return a-b;
+    }
+
     public static void main(String args[]){
         Scanner sc= new Scanner(System.in);
 
@@ -96,7 +104,10 @@ public class Functions{
         // int binomialCoeff= binomial(n, r);
         // System.out.println(n+" C "+r+" = "+binomialCoeff);
 
-        System.out.println(sum(5,9));           //Function overloading using parameters
-        System.out.println(sum(7,6,5));
+        // System.out.println(sum(5,9));           //Function overloading using parameters
+        // System.out.println(sum(7,6,5));
+
+        System.out.println(diff(9,5));           //Function overloading using data types
+        System.out.println(diff(15.4f,4.2f));
     }
 }
