@@ -97,6 +97,22 @@ public class Functions{
         }
     }
 
+    public static int lastDigit(int num){
+        int digit= num%10;
+        return digit;
+    }
+
+    public static int decimal(int n){
+        int i= 0;
+        int dec= 0;
+        while(n>0){
+            dec= dec + (lastDigit(n)*(int)Math.pow(2, i));
+            n/=10;
+            i++;
+        }
+        return dec;
+    }
+
     public static void main(String args[]){
         Scanner sc= new Scanner(System.in);
 
@@ -152,8 +168,12 @@ public class Functions{
         //     System.out.println("NOT PRIME");
         // }
 
-        System.out.print("Enter Number: ");         //Print primes in range
+        // System.out.print("Enter Number: ");         //Print primes in range
+        // int n= sc.nextInt();
+        // printPrime(n);
+
+        System.out.print("Enter Binary Number: ");          //Binary to decimal number
         int n= sc.nextInt();
-        printPrime(n);
+        System.out.println(decimal(n));
     }
 }
