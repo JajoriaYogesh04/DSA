@@ -97,20 +97,28 @@ public class Functions{
         }
     }
 
-    public static int lastDigit(int num){
-        int digit= num%10;
-        return digit;
-    }
-
     public static int decimal(int n){
         int i= 0;
         int dec= 0;
         while(n>0){
-            dec= dec + (lastDigit(n)*(int)Math.pow(2, i));
+            dec= dec + ((n%10)*(int)Math.pow(2, i));
             n/=10;
             i++;
         }
         return dec;
+    }
+
+    public static int binary(int n){
+        int rem=0;
+        int i=0;
+        int bin=0;
+        while(n>0){
+            rem= n%2;
+            bin= bin+(rem*(int)Math.pow(10,i));
+            i++;
+            n/=2;
+        }
+        return bin;
     }
 
     public static void main(String args[]){
@@ -172,8 +180,13 @@ public class Functions{
         // int n= sc.nextInt();
         // printPrime(n);
 
-        System.out.print("Enter Binary Number: ");          //Binary to decimal number
+        // System.out.print("Enter Binary Number: ");          //Binary to decimal number
+        // int n= sc.nextInt();
+        // System.out.println(decimal(n));
+
+        System.out.print("Enter Decimal Number: ");         //Decimal to binary number
         int n= sc.nextInt();
-        System.out.println(decimal(n));
+        int binary= binary(n);
+        System.out.println("Binary Number: "+binary);
     }
 }
