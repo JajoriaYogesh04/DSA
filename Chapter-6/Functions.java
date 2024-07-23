@@ -121,6 +121,11 @@ public class Functions{
         return bin;
     }
 
+    public static void methodScope(){
+        int localVar= 10;
+        System.out.println(localVar);
+    }
+
     public static void main(String args[]){
         Scanner sc= new Scanner(System.in);
 
@@ -184,9 +189,11 @@ public class Functions{
         // int n= sc.nextInt();
         // System.out.println(decimal(n));
 
-        System.out.print("Enter Decimal Number: ");         //Decimal to binary number
-        int n= sc.nextInt();
-        int binary= binary(n);
-        System.out.println("Binary Number: "+binary);
+        // System.out.print("Enter Decimal Number: ");         //Decimal to binary number
+        // int n= sc.nextInt();
+        // int binary= binary(n);
+        // System.out.println("Binary Number: "+binary);
+
+        methodScope();              //Method Scope
     }
 }
