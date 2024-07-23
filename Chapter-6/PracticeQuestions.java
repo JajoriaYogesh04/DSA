@@ -35,6 +35,16 @@ public class PracticeQuestions {
         }
     }
 
+    public static int digitSum(int num){
+        int digitSum= 0;
+        while(num>0){
+            int ld= num%10;
+            digitSum+=ld;
+            num/=10;
+        }
+        return digitSum;
+    }
+
     public static void main(String args[]){
         Scanner sc= new Scanner(System.in);
 
@@ -66,11 +76,16 @@ public class PracticeQuestions {
         //     System.out.println(num+" is NOT a palindrome");
         // }
 
-        System.out.println("Minimum: "+Math.min(5,10));                //Practice Question 4
-        System.out.println("Maximum: "+Math.max(5,10));
-        System.out.println("Square Root: "+Math.sqrt(64));
-        System.out.println("Power: "+Math.pow(2,5));
-        // System.out.println("Average: "+Math.avg(6,4));
-        System.out.println("Absolute: "+Math.abs(-10));
+        // System.out.println("Minimum: "+Math.min(5,10));                //Practice Question 4
+        // System.out.println("Maximum: "+Math.max(5,10));
+        // System.out.println("Square Root: "+Math.sqrt(64));
+        // System.out.println("Power: "+Math.pow(2,5));
+        // // System.out.println("Average: "+Math.avg(6,4));
+        // System.out.println("Absolute: "+Math.abs(-10));
+
+        System.out.print("Enter Number: ");                             //Practice Question 5
+        int num= sc.nextInt();
+        int digitSum= digitSum(num);
+        System.out.println("Sum of digit of "+num+": "+digitSum);
     }
 }
