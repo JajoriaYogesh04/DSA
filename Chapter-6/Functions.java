@@ -194,6 +194,13 @@ public class Functions{
         // int binary= binary(n);
         // System.out.println("Binary Number: "+binary);
 
-        methodScope();              //Method Scope
+        // methodScope();              //Method Scope
+
+        int x=5;                        //Block Scope
+        {
+            int y=10;
+            System.out.println(x+y);
+        }
+        // System.out.println(y);               //Not Accessible
     }
 }
