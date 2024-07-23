@@ -57,13 +57,20 @@ public class PracticeQuestions {
         //     System.out.println(num+" is ODD");
         // }
 
-        System.out.print("Enter Number: ");                           //Practice Question 3
-        int num= sc.nextInt();
-        if(isPalindrome(num)){
-            System.out.println(num+" is a palindrome");
-        }
-        else{
-            System.out.println(num+" is NOT a palindrome");
-        }
+        // System.out.print("Enter Number: ");                           //Practice Question 3
+        // int num= sc.nextInt();
+        // if(isPalindrome(num)){
+        //     System.out.println(num+" is a palindrome");
+        // }
+        // else{
+        //     System.out.println(num+" is NOT a palindrome");
+        // }
+
+        System.out.println("Minimum: "+Math.min(5,10));                //Practice Question 4
+        System.out.println("Maximum: "+Math.max(5,10));
+        System.out.println("Square Root: "+Math.sqrt(64));
+        System.out.println("Power: "+Math.pow(2,5));
+        // System.out.println("Average: "+Math.avg(6,4));
+        System.out.println("Absolute: "+Math.abs(-10));
     }
 }
