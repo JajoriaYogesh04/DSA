@@ -8,13 +8,11 @@ public class ArrayFunctions {
             arr[i]= sc.nextInt();
         }
     }
-
     public static void updateArray(int arr[]){
         for(int i=0; i<arr.length; i++){
             arr[i]+=1;
         }
     }
-
     public static void outputArray(int arr[]){
         for(int i=0; i<arr.length; i++){
             System.out.print(arr[i]+" ");
