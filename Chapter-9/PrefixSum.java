@@ -1,7 +1,5 @@
 import java.util.*;
 
-import javax.swing.plaf.synth.SynthStyle;
-
 public class PrefixSum {
     public static void maxSumSubarray(int arr[]){
         int prefix[]= new int[arr.length];
