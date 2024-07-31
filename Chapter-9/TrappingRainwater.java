@@ -70,4 +70,4 @@ public class TrappingRainwater {
         int trappingRainwater= trappingRainwater(array);
         System.out.println("Trapped Rainwater Volume: "+trappingRainwater);
     }
-}
+}   
