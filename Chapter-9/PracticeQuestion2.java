@@ -21,7 +21,7 @@ public class PracticeQuestion2{
             if(arr[mid]==target){
                 return mid;
             }
-            else if(arr[start]>=arr[mid]){          //right sorted
+            else if(arr[start]>arr[mid]){          //right sorted
                 if(arr[mid]<=target && target<=arr[end]){
                     start= mid+1;
                 }
