@@ -1,5 +1,27 @@
 import java.util.*;
 public class TwodArray {
+    public static int largest(int arr[][]){
+        int max= Integer.MIN_VALUE;
+        for(int i=0; i<arr.length; i++){
+            for(int j=0; j<arr[0].length; j++){
+                if(arr[i][j]>max){
+                    max=arr[i][j];
+                }
+            }
+        }
+        return max;
+    }
+    public static int smallest(int arr[][]){
+        int min= Integer.MAX_VALUE;
+        for(int i=0; i<arr.length; i++){
+            for(int j=0; j<arr[0].length; j++){
+                if(arr[i][j]<min){
+                    min=arr[i][j];
+                }
+            }
+        }
+        return min;
+    }
     public static boolean search(int arr[][], int key){
         for(int i=0; i<arr.length; i++){
             for(int j=0; j<arr[0].length; j++){
@@ -38,8 +60,11 @@ public class TwodArray {
         inputArray(matrix);
         printArray(matrix);
         
-        System.out.print("Enter Search Element: ");
-        int key= sc.nextInt();
-        System.out.println(search(matrix, key));
+        // System.out.print("Enter Search Element: ");
+        // int key= sc.nextInt();
+        // System.out.println(search(matrix, key));
+
+        System.out.println("Largest Element: "+largest(matrix));
+        System.out.println("Smallest Element: "+smallest(matrix));
     }
 }
