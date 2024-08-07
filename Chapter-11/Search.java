@@ -35,7 +35,7 @@ public class Search{
             }
         }
     }
-    public static boolean stairCaseSearch(int arr[][], int key){
+    public static boolean stairCaseSearchTopRight(int arr[][], int key){
         int row= 0; 
         int col= arr[0].length-1;
         while(row<=arr.length-1 && col>=0){
@@ -51,6 +51,24 @@ public class Search{
             }
         }
         System.out.println("NOT FOUND!");
+        return false;
+    }
+    public static boolean stairCaseSearchBottomLeft(int arr[][], int key){
+        int col=0;
+        int row= arr.length-1;
+        while(row>=0 && col<arr[0].length){
+            if(arr[row][col]==key){
+                System.out.println("("+row+","+col+")");
+                return true;
+            }
+            else if(arr[row][col]>key){
+                row--;
+            }
+            else{
+                col++;
+            }
+        }
+        System.out.print("NOT FOUND!");
         return false;
     }
     public static void printArray(int arr[][]){
@@ -86,6 +104,7 @@ public class Search{
         // BinarySearchRow(brr, 4);
         // BinarySearch(arr, key);
 
-        stairCaseSearch(matrix, key);
+        stairCaseSearchTopRight(matrix, key);
+        stairCaseSearchBottomLeft(matrix, key);
     }
 }
