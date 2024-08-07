@@ -1,3 +1,4 @@
+import java.util.*;
 public class Search{
     public static void brutForce(int arr[][], int key){
         for(int i=0; i<arr.length; i++){
@@ -34,17 +35,57 @@ public class Search{
             }
         }
     }
+    public static boolean stairCaseSearch(int arr[][], int key){
+        int row= 0; 
+        int col= arr[0].length-1;
+        while(row<=arr.length-1 && col>=0){
+            if(arr[row][col]==key){
+                System.out.println("("+row+","+col+")");
+                return true;
+            }
+            else if(arr[row][col]>key){
+                col--;
+            }
+            else{
+                row++;
+            }
+        }
+        System.out.println("NOT FOUND!");
+        return false;
+    }
+    public static void printArray(int arr[][]){
+        for(int i=0; i<arr.length; i++){
+            for(int j=0; j<arr[0].length; j++){
+                System.out.print(arr[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+    public static void inputArray(int arr[][]){
+        Scanner sc= new Scanner(System.in);
+        for(int i=0; i<arr.length; i++){
+            for(int j=0; j<arr[0].length; j++){
+                System.out.print("Enter: ");
+                arr[i][j]= sc.nextInt();
+            }
+        }
+    }
     public static void main(String args[]){
-        int arr[][]= {
-            {10,20,30,40},
-            {15,25,35,45},
-            {27,29,37,48},
-            {32,33,39,50}
-        };
-        int brr[]= {1,2,3,4};
-        int key= 39;
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter Row Length: ");
+        int row= sc.nextInt();
+        System.out.print("Enter Column Length: ");
+        int col= sc.nextInt();
+        int matrix[][]= new int [row][col];
+        inputArray(matrix);
+        System.out.print("Enter Key: ");
+        int key= sc.nextInt();
+        printArray(matrix);
+
         // brutForce(arr, key);
         // BinarySearchRow(brr, 4);
-        BinarySearch(arr, key);
+        // BinarySearch(arr, key);
+
+        stairCaseSearch(matrix, key);
     }
 }
