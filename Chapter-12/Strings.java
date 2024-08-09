@@ -1,5 +1,10 @@
 import java.util.*;
 public class Strings{
+    public static void printLetters(String str){
+        for(int i=0; i<str.length(); i++){
+            System.out.print(str.charAt(i)+" ");
+        }
+    }
     public static void main(String ars[]){
         Scanner sc= new Scanner(System.in);
 
@@ -22,5 +27,7 @@ public class Strings{
         String lastName= "Jajoria";
         String fullName= firstName+" "+lastName;
         System.out.println(fullName);
+
+        printLetters(fullName);
     }
 }
