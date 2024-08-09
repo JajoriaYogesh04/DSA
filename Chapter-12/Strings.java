@@ -12,10 +12,15 @@ public class Strings{
         // System.out.print("Enter Word: ");
         // String word= sc.next();
         // System.out.println(word);
-        System.out.print("Enter Sentence: ");
-        String sentence= sc.nextLine();
-        System.out.println(sentence);
-        
-        System.out.println(sentence.length());
+        // System.out.print("Enter Sentence: ");
+        // String sentence= sc.nextLine();
+        // System.out.println(sentence);
+
+        // System.out.println(sentence.length());
+
+        String firstName= "Yogesh";
+        String lastName= "Jajoria";
+        String fullName= firstName+" "+lastName;
+        System.out.println(fullName);
     }
 }
