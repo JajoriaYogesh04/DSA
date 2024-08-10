@@ -23,11 +23,13 @@ public class Strings{
 
         // System.out.println(sentence.length());
 
-        String firstName= "Yogesh";
-        String lastName= "Jajoria";
-        String fullName= firstName+" "+lastName;
-        System.out.println(fullName);
+        // String firstName= "Yogesh";
+        // String lastName= "Jajoria";
+        // String fullName= firstName+" "+lastName;
+        // System.out.println(fullName);
 
-        printLetters(fullName);
+        // printLetters(fullName);
+
+        
     }
 }
