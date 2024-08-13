@@ -1,24 +1,25 @@
 import java.util.*;
 public class PracticeQuestion4 {
-    public static void isAnagram(char arr[], char brr[]){
+    public static boolean isAnagram(char arr[], char brr[]){
         if(arr.length == brr.length){
-            System.out.println("EQUAL");
+            // System.out.println("EQUAL");
             Arrays.sort(arr);
             Arrays.sort(brr);
             if(Arrays.equals(arr, brr)){
-                System.out.println("Anagram");
+                return true;
             }
             else{
-                System.out.println("Not Anagram");
+                return false;
             }
         }
-        else{
-            System.out.println("Not Equal");
-        }
+        return false;
     }
     public static void main(String args[]){
-        String str1= "dbca";
-        String str2= "bcAda";
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter First String: ");
+        String str1= sc.next();
+        System.out.print("Enter Second String: ");
+        String str2= sc.next();
 
         str1= str1.toLowerCase();
         str2= str2.toLowerCase();
@@ -26,7 +27,12 @@ public class PracticeQuestion4 {
         char strArr1[]= str1.toCharArray();
         char strArr2[]= str2.toCharArray();
 
-        isAnagram(strArr1, strArr2);
+        if(isAnagram(strArr1, strArr2)){
+            System.out.println("ANAGRAM");
+        }
+        else{
+            System.out.println("NOT ANAGRAM");
+        }
 
     }
 }
