@@ -6,5 +6,6 @@ public class BitwiseOperators {
         // System.out.println(~5);
         System.out.println(~0);
         System.out.println(5<<2);
+        System.out.println(6>>1);
     }
 }
