@@ -20,7 +20,7 @@ public class BinaryDecimalConversions {
         System.out.println(dec);
     }
     public static void main(String args[]){
-        int dec= 10;
+        int dec= 65;
         toBinary(dec);
         int bin= 101;
         toDecimal(bin);
