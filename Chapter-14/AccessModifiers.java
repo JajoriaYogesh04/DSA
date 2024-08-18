@@ -5,6 +5,7 @@ public class AccessModifiers{
         System.out.println(myAC.username);
         // myAC.password= "krishna123";
         myAC.setPassword("krishna123");
+        // System.out.println(myAC.password);
     }
 }
 class BankAccount{
