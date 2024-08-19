@@ -1,8 +1,13 @@
 public class Inheritance {
     public static void main(String args[]){
-        Fish f1= new Fish();
-        System.out.println(f1.fins);
-        f1.eat();
+        // Fish shark= new Fish();
+        // System.out.println(shark.fins);
+        // shark.eat();
+
+        Dog dobby= new Dog();
+        dobby.breath();
+        dobby.legs= 2;
+        System.out.println(dobby.legs);
     }
 }
 
@@ -14,6 +19,12 @@ class Animal{
     void breath(){
         System.out.println("Breats");
     }
+}
+class Mammal extends Animal{
+    int legs;
+}
+class Dog extends Mammal{
+    String breed;
 }
 class Fish extends Animal{
     int fins= 2;
