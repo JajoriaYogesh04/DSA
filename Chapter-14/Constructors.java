@@ -9,6 +9,7 @@ public class Constructors {
         s1.marks[0]= 99;
         s1.marks[1]= 98;
         s1.marks[2]= 97;
+
         Student s5= new Student(s1);
         // s5.password= "123Aryan";
         System.out.println(s5.name);
@@ -47,10 +48,19 @@ class Student{
         marks= new int[3];
         this.roll= roll;
     }
-    Student(Student s1){
+    // Student(Student s1){             //Shallow copy constructor
+    //     marks= new int[3];
+    //     this.name= s1.name;
+    //     this.roll= s1.roll;
+    //     this.marks= s1.marks;
+    // }
+
+    Student (Student s1){               //Deep copy constructor
         marks= new int[3];
         this.name= s1.name;
         this.roll= s1.roll;
-        this.marks= s1.marks;
+        for(int i=0; i<marks.length; i++){
+            this.marks[i]= s1.marks[i];
+        }
     }
 }
