@@ -9,14 +9,34 @@ public class Static {
         
         System.out.println(s1.percentage(78, 59, 48));
         System.out.println(s2.percentage(95, 84, 86));
+
+        Horse h1= new Horse();                  //Super
     }
 }
 
 class Student{
     String name;
     int roll;
+    void setName(String name){
+        this.name= name;
+    }
+    String getName(){
+        return this.name;
+    }
     static String school;
     static int percentage(int a, int b, int c){
         return (a+b+c)/3;
+    }
+}
+
+class Animal{
+    Animal(){
+        System.out.println("Animal Constructor");
+    }
+}
+class Horse extends Animal{
+    Horse(){
+        super();
+        System.out.println("Horse Contructor");
     }
 }
