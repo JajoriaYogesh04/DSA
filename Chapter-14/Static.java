@@ -11,6 +11,7 @@ public class Static {
         System.out.println(s2.percentage(95, 84, 86));
 
         Horse h1= new Horse();                  //Super
+        System.out.println(h1.color);
     }
 }
 
@@ -30,13 +31,15 @@ class Student{
 }
 
 class Animal{
+    String color;
     Animal(){
         System.out.println("Animal Constructor");
     }
 }
 class Horse extends Animal{
     Horse(){
-        super();
+        // super();
+        super.color= "brown";
         System.out.println("Horse Contructor");
     }
 }
