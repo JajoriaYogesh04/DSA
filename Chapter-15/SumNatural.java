@@ -12,6 +12,7 @@ public class SumNatural {
     public static void main(String args[]){
         Scanner sc= new Scanner(System.in);
         System.out.print("Enter: ");
+        int k=0;
         int n= sc.nextInt();
         System.out.println(sumNatural(n));
     }
