@@ -1,11 +1,22 @@
 import java.util.Scanner;
 
 public class Power {
-    public static int power(int a, int i){
-        if(i==0){
-            return 1;
+    // public static int power(int a, int i){
+    //     if(i==0){
+    //         return 1;
+    //     }
+    //     return a*power(a, i-1);
+    // }
+    public static int power(int a, int b){
+        if(b==1){
+            return a;
         }
-        return a*power(a, i-1);
+        if(b%2==0){
+            return power(a, b/2) * power(a, b/2);
+        }
+        else{
+            return a * power(a, (b-1)/2) * power(a, (b-1)/2);
+        }
     }
     public static void main(String args[]){
         Scanner sc= new Scanner(System.in);
