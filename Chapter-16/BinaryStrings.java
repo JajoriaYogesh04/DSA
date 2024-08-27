@@ -5,6 +5,13 @@ public class BinaryStrings {
             System.out.println(str);
             return;
         }
+        // if(lastPlace==0){
+        //     binaryStrings(n-1, str+"0", 0);
+        //     binaryStrings(n-1, str+"1", 1);
+        // }
+        // else{
+        //     binaryStrings(n-1, str+"0", 0);
+        // }
         binaryStrings(n-1, str+"0", 0);
         if(lastPlace==0){
             binaryStrings(n-1, str+"1", 1);
