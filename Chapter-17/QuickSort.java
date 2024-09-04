@@ -1,17 +1,5 @@
+import java.util.*;
 public class QuickSort {
-    // public static void quickSort(int arr[], int i, int j){
-    //     int pIdx= partition(arr,)
-    //     if(j>=arr.length){
-    //         return;
-    //     }
-    //     if(arr[j]<=partition){
-    //         i++;
-    //         int temp= arr[i];
-    //         arr[i]= arr[j];
-    //         arr[j]= temp;
-    //     }
-    //     quickSort(arr, i, j+1, partition);
-    // }
     public static void quickSort(int arr[], int si, int ei){
         if(si>=ei){
             return;
@@ -44,8 +32,19 @@ public class QuickSort {
             System.out.print(arr[i]+" ");
         }
     }
+    public static void inputArray(int arr[]){
+        Scanner sc= new Scanner(System.in);
+        for(int i=0; i<arr.length; i++){
+            System.out.print("Enter: ");
+            arr[i]= sc.nextInt();
+        }
+    }
     public static void main(String args[]){
-        int arr[]= {6,3,9,8,2,5};
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter Length: ");
+        int length= sc.nextInt();
+        int arr[]= new int[length];
+        inputArray(arr);
         int start= 0;
         int end= arr.length-1;
         quickSort(arr, start, end);
