@@ -1,32 +1,32 @@
 import java.util.*;
 public class PracticeQuestion2 {
-    public static void quickSort(int arr[], int start, int end){
+    public static int majorityEle(int arr[], int start, int end){
         // int mid= start+(end-start)/2;
-        if(start>=end){
-            return;
+        if(start==end){
+            return arr[start];
         }
         
-        int pIdx= partition(arr, start, end);
-        quickSort(arr, start, pIdx-1);
-        quickSort(arr, pIdx+1, end);
+        int mid= start+(end-start)/2;
+        int left= majorityEle(arr, start, mid);
+        int right= majorityEle(arr, mid+1, end);
+        if(left==right){
+            return left;
+        }
+        int leftCount= countInRange(arr, left, start, end);
+        int rightCount= countInRange(arr, right, start, end);
+        if(leftCount>rightCount){
+            return left;
+        }
+        return right;
     }
-    public static int partition(int arr[], int si, int ei){
-        int i= si-1;
-        int j=si;
-        int pivot= arr[ei];
-        for(j=si; j<ei; j++){
-            if(arr[j]<=pivot){
-                i++;
-                int temp= arr[i];
-                arr[i]= arr[j];
-                arr[j]= temp;
+    public static int countInRange(int arr[], int num, int si, int ei){
+        int count=0;
+        for(int i=si; i<ei; i++){
+            if(arr[i]==num){
+                count++;
             }
         }
-        i++;
-        int temp= pivot;
-        arr[ei]= arr[i];
-        arr[i]= temp;
-        return i;
+        return count;
     }
     public static void printArray(int arr[]){
         for(int i=0; i<arr.length; i++){
@@ -46,9 +46,6 @@ public class PracticeQuestion2 {
         int length= sc.nextInt();
         int nums[]= new int[length];
         inputArray(nums);
-        quickSort(nums, 0, nums.length-1);
-        // printArray(nums);
-        int mid= (nums.length-1)/2;
-        System.out.println(nums[mid]);
+        System.out.println(majorityEle(nums, 0, nums.length-1));
     }
 }
