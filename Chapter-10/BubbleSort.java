@@ -2,6 +2,7 @@ import java.util.*;
 public class BubbleSort {
     public static void bubbleSort(int arr[]){
         int swap= 0;
+        boolean swapped= false;
         for(int i=0; i<=arr.length-2; i++){
             for(int j=0; j<=arr.length-2-i; j++){
                 if(arr[j]>arr[j+1]){
@@ -9,7 +10,11 @@ public class BubbleSort {
                     arr[j+1]= arr[j];
                     arr[j]= temp;
                     swap++;
+                    swapped= true;
                 }
+            }
+            if(swapped==false){
+                break;
             }
         }
         System.out.print("Number of Swaps: "+swap+"\n");
