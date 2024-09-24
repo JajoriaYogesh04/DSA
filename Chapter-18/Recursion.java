@@ -11,9 +11,16 @@ public class Recursion {
         }
         return n+sumN(n-1);
     }
+    public static int fabonacci(int n){
+        if(n==0 || n==1){
+            return n;
+        }
+        return fabonacci(n-1)+fabonacci(n-2);
+    }
     public static void main(String args[]){
-        int n=4;
+        int n=7;
         System.out.println(factorial(n));
         System.out.println(sumN(n));
+        System.out.println(fabonacci(n));
     }
 }
