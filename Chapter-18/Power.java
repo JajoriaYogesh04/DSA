@@ -15,10 +15,21 @@ public class Power{
         }
         return halfPowerSquare;
     }  
+    public static int powerThree(int base, int exp){
+        if(exp==0){
+            return 1;
+        }
+        int halfPower= powerThree(base, exp/2);
+        if(exp%2!=0){
+            return halfPower * halfPower * base;
+        }
+        return halfPower * halfPower;
+    }
     public static void main(String args[]){
         int base= 2;
         int exp= 10;
         System.out.println(powerOne(base, exp));
         System.out.println(powerTwo(base, exp));
+        System.out.println(powerThree(base, exp));
     }
 }
