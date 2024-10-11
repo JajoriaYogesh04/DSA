@@ -22,19 +22,22 @@ public class NQueens {
         }
         return true;
     }
-    public static void nQueens(String board[][], int row){
+    public static boolean nQueens(String board[][], int row){
         if(row==board.length){
             count++;
-            printBoard(board);
-            return;
+            // printBoard(board);
+            return true;
         }
         for(int j= 0; j<board[0].length; j++){          //j=>columns
             if(isSafe(board, row, j)){
                 board[row][j]= "Q";
-                nQueens(board, row+1);                      //function call
+                if(nQueens(board, row+1)){
+                    return true;
+                }                                            //function call
                 board[row][j]= "X";                         //backtrack
             }
         }
+        return false;
     }
     public static void printBoard(String board[][]){
         for(int i=0; i<board.length; i++){
@@ -56,7 +59,13 @@ public class NQueens {
                 board[i][j]= "X";
             }
         }
-        nQueens(board, 0);
-        System.out.println("Number of ways: "+count);
+        if(nQueens(board, 0)){
+            System.out.println("Solution Exist");
+            printBoard(board);
+        }
+        else{
+            System.out.println("Solution NOT Exist");
+        }
+        // System.out.println("Number of ways: "+count);
     }
 }
