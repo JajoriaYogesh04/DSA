@@ -1,6 +1,6 @@
 public class Sudoku {
     public static boolean isSafe(int sudoku[][], int row, int col, int digit){
-        for(int i=0; i<0; i++){
+        for(int i=0; i<9; i++){
             if(sudoku[i][col]==digit){
                 return false;
             }
