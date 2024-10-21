@@ -24,12 +24,6 @@ public class RatInMaze {
             if(ratInMaze(maze, row, col+1, solution)){
                 return true;
             }
-            if(ratInMaze(maze, row-1, col, solution)){
-                return true;
-            }
-            if(ratInMaze(maze, row, col-1, solution)){
-                return true;
-            }
             solution[row][col]=0;
         }
         return false;
