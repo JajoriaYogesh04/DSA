@@ -2,11 +2,13 @@ import java.util.*;
 public class Maximum {
     public static void main(String args[]){
         ArrayList<Integer> list= new ArrayList<>();
-        list.add(2);
-        list.add(5);
-        list.add(9);
-        list.add(3);
-        list.add(6);
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter Number of Elements: ");
+        int len= sc.nextInt();
+        for(int i=0; i<len; i++){
+            System.out.print("Enter: ");
+            list.add(sc.nextInt());
+        }
         System.out.println(list);
         int max= Integer.MIN_VALUE;
         for(int i=0; i<list.size(); i++){
