@@ -35,6 +35,7 @@ public class ContainerWithMaxWater {
             System.out.print("Enter: ");
             list.add(sc.nextInt());
         }
+        System.out.println(list);
     }
     public static void main(String args[]){
         Scanner sc= new Scanner(System.in);
