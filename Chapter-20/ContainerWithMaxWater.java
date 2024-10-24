@@ -1,21 +1,22 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 public class ContainerWithMaxWater {
     // public static int containerWithMaxWater(ArrayList<Integer> height){
-    //     int volume= Integer.MIN_VALUE;
+    //     int maxVol= 0;
     //     for(int i=0; i<height.size()-1; i++){
-    //         for(int j=2; j<height.size(); j++){
+    //         for(int j=i+1; j<height.size(); j++){
     //             int start= height.get(i);
     //             int end= height.get(j);
-    //             int vol= (j-i)*Math.min(start, end)*1;
-    //             volume= Math.max(vol, volume);
+    //             int vol= (j-i)*Math.min(start, end);
+    //             maxVol= Math.max(vol, maxVol);
     //         }
     //     }
-    //     return volume;
+    //     return maxVol;
     // }
     public static int containerWithMaxWater(ArrayList<Integer> height){
         int i= 0;
         int j= height.size()-1;
-        int volume= Integer.MIN_VALUE;
+        int maxVol= 0;
         while (i<j) {
             if(height.get(i)<=height.get(j)){
                 i++;
@@ -24,21 +25,23 @@ public class ContainerWithMaxWater {
                 j--;
             }
             int vol= (j-1)*(Math.min(height.get(i), height.get(j)));
-            volume= Math.max(vol, volume);
+            maxVol= Math.max(vol, maxVol);
         }
-        return volume;
+        return maxVol;
+    }
+    public static void inputArrayList(ArrayList<Integer> list, int n){
+        Scanner sc= new Scanner(System.in);
+        for(int i=0; i<n; i++){
+            System.out.print("Enter: ");
+            list.add(sc.nextInt());
+        }
     }
     public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
         ArrayList<Integer> height= new ArrayList<>();
-        height.add(1);
-        height.add(8);
-        height.add(6);
-        height.add(2);
-        height.add(5);
-        height.add(4);
-        height.add(8);
-        height.add(3);
-        height.add(7);
+        System.out.print("Enter Length: ");
+        int len= sc.nextInt();
+        inputArrayList(height, len);
         System.out.println(containerWithMaxWater(height));
     }
 }
