@@ -1,6 +1,6 @@
 import java.util.*;
 import java.util.Scanner;
-public class PairSum {
+public class PairSum1 {
     public static boolean pairSum1(ArrayList<Integer>list, int n){
         for(int i=0; i<list.size()-1; i++){
             for(int j=i+1; j<list.size(); j++){
