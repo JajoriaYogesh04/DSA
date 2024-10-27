@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.Scanner;
 public class PairSum {
     public static boolean pairSum1(ArrayList<Integer>list, int n){
         for(int i=0; i<list.size()-1; i++){
@@ -26,16 +27,22 @@ public class PairSum {
         }
         return false;
     }
-    public static void main(String args[]){
-        ArrayList<Integer> list= new ArrayList<>();
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        list.add(4);
-        list.add(5);
-        list.add(6);
+    public static void inputArrayList(ArrayList<Integer>list, int n){
+        Scanner sc= new Scanner(System.in);
+        for(int i=0; i<n; i++){
+            System.out.print("Enter: ");
+            list.add(sc.nextInt());
+        }
         System.out.println(list);
-        int target= 5;
+    }
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        ArrayList<Integer> list= new ArrayList<>();
+        System.out.print("Enter Length: ");
+        int len= sc.nextInt();
+        inputArrayList(list, len);
+        System.out.print("Enter Target: ");
+        int target= sc.nextInt();
         // System.out.println(pairSum1(list, target));
         System.out.println(pairSum2(list, target));
     }
