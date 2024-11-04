@@ -31,11 +31,28 @@ public class LinkedList{
         tail.next= newNode;
         tail= newNode;
     }
+    public static void print(){
+        if(head==null){                         //Empty LL
+            System.out.println("null");
+            return;
+        }                                       //temp->head
+        Node temp= head;
+        while(temp!=null){
+            System.out.print(temp.data+"->");   
+            temp= temp.next;                    
+        }
+        System.out.println("null");
+    }
     public static void main(String args[]){
         LinkedList ll= new LinkedList();
+        print();
         ll.addFirst(2);
+        print();
         ll.addFirst(1);
+        print();
         ll.addLast(3);
+        print();
         ll.addLast(4);
+        print();
     }
 }
