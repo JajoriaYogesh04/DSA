@@ -9,9 +9,23 @@ public class LinkedList{
     }
     public static Node head;
     public static Node tail;
+    
+    public static void addFirst(int data){
+        //Create new Node
+        Node newNode= new Node(data);
+        //If Single Node Linked List
+        if(head==null){
+            head=tail=newNode;
+            return;
+        }
+        //newNode->next->head
+        newNode.next= head;
+        //head->newNode
+        head= newNode;
+    }
     public static void main(String args[]){
         LinkedList ll= new LinkedList();
-        ll.head= new Node(1);
-        ll.head.next= null;
+        ll.addFirst(1);
+        ll.addFirst(2);
     }
 }
