@@ -9,9 +9,11 @@ public class LinkedList{
     }
     public static Node head;
     public static Node tail;
+    static int size;
     public static void addFirst(int data){
         //Create new Node
         Node newNode= new Node(data);
+        size++;
         //If Empty Linked List
         if(head==null){
             head=tail=newNode;
@@ -24,6 +26,7 @@ public class LinkedList{
     }
     public static void addLast(int data){
         Node newNode= new Node(data);
+        size++;
         if(head==null){
             head=tail= newNode;
             return;
@@ -49,6 +52,7 @@ public class LinkedList{
             return;
         }
         Node newNode= new Node(data);
+        size++;
         Node temp= head;
         int i=0; 
         while(i<idx-1){
@@ -75,5 +79,6 @@ public class LinkedList{
         print();
         ll.addMiddle(0, 0);             //Add Middle do not work for add first
         print();
+        System.out.println(size);
     }
 }
