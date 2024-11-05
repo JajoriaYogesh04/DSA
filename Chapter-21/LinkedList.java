@@ -62,6 +62,32 @@ public class LinkedList{
         newNode.next= temp.next;
         temp.next= newNode;
     }
+    public static int removeHead(){
+        if(head.next==null){
+            return Integer.MIN_VALUE;
+        }
+        else if(size==1){
+            int val= head.data;
+            head= tail= null;
+            size=0;
+            return val;
+        }
+        int val= head.data;
+        head= head.next;
+        size--;
+        return val;
+    }
+    // public static void remove(int idx){
+    //     Node temp= head;
+    //     int i=0;
+    //     while(i<idx-1){
+    //         temp= temp.next;
+    //         i++;
+    //     }
+    //     Node rem= temp.next;
+    //     temp.next= rem.next;
+    //     rem.next= null;
+    // }
     public static void main(String args[]){
         LinkedList ll= new LinkedList();
         print();
@@ -78,6 +104,11 @@ public class LinkedList{
         ll.addMiddle(6, 5);             //Add middle for for ad last
         print();
         ll.addMiddle(0, 0);             //Add Middle do not work for add first
+        print();
+        System.out.println(size);
+        // ll.remove(3);
+        // print();
+        System.out.println(ll.removeHead());
         print();
         System.out.println(size);
     }
