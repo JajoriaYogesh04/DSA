@@ -43,6 +43,21 @@ public class LinkedList{
         }
         System.out.println("null");
     }
+    public static void addMiddle(int data, int idx){
+        if(idx==0){
+            addFirst(data);
+            return;
+        }
+        Node newNode= new Node(data);
+        Node temp= head;
+        int i=0; 
+        while(i<idx-1){
+            temp= temp.next;
+            i++;
+        }
+        newNode.next= temp.next;
+        temp.next= newNode;
+    }
     public static void main(String args[]){
         LinkedList ll= new LinkedList();
         print();
@@ -53,6 +68,12 @@ public class LinkedList{
         ll.addLast(3);
         print();
         ll.addLast(4);
+        print();
+        ll.addMiddle(5, 2);
+        print();
+        ll.addMiddle(6, 5);             //Add middle for for ad last
+        print();
+        ll.addMiddle(0, 0);             //Add Middle do not work for add first
         print();
     }
 }
