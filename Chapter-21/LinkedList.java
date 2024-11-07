@@ -110,8 +110,9 @@ public class LinkedList{
             i++;
         }
         Node rem= temp.next;
-        temp.next= rem.next;
-        rem.next= null;
+        // temp.next= rem.next;
+        // rem.next= null;
+        temp.next= temp.next.next;
         size--;
         return rem.data;
     }
@@ -155,6 +156,30 @@ public class LinkedList{
         }
         head= prev;
     }
+    public static int deleteNthFromLast(int n){
+        int sz= 0;
+        Node temp= head;
+        while(temp!=null){
+            temp= temp.next;
+            sz++;
+        }
+        if(n==sz){
+            int val= head.data;
+            head= head.next;
+            return val;
+        }
+        int i=0;
+        int toFind= sz-n;
+        Node prev= head;
+        while(i<toFind-1){
+            prev= prev.next;
+            i++;
+        }
+        int val= prev.next.data;
+        prev.next= prev.next.next;
+        size--;
+        return val;
+    }
     public static void main(String args[]){
         LinkedList ll= new LinkedList();
         print();
@@ -185,6 +210,8 @@ public class LinkedList{
         System.out.println("Index: "+ll.itrSearch(3));
         System.out.println("Index: "+ll.recSearch(3));
         ll.reverse();
+        print();
+        System.out.println("Removed: "+deleteNthFromLast(2));
         print();
     }
 }
