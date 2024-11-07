@@ -143,6 +143,18 @@ public class LinkedList{
     public static int recSearch(int key){
         return helper(head, key);
     }
+    public static void reverse(){
+        Node prev= null;
+        Node curr= tail= head;
+        Node next;
+        while(curr!=null){
+            next= curr.next;
+            curr.next= prev;
+            prev= curr;
+            curr= next;
+        }
+        head= prev;
+    }
     public static void main(String args[]){
         LinkedList ll= new LinkedList();
         print();
@@ -170,7 +182,9 @@ public class LinkedList{
         print();
         System.out.println("Removed: "+ll.remove(2));
         print();
-        System.out.println(ll.itrSearch(3));
-        System.out.println(ll.recSearch(3));
+        System.out.println("Index: "+ll.itrSearch(3));
+        System.out.println("Index: "+ll.recSearch(3));
+        ll.reverse();
+        print();
     }
 }
