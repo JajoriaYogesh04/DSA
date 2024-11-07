@@ -180,6 +180,15 @@ public class LinkedList{
         size--;
         return val;
     }
+    public static Node findMid(){
+        Node slow= head;
+        Node fast= head;
+        while(fast!=null && fast.next!=null){
+            slow= slow.next;
+            fast= fast.next.next;
+        }
+        return slow;
+    }
     public static void main(String args[]){
         LinkedList ll= new LinkedList();
         print();
@@ -211,7 +220,8 @@ public class LinkedList{
         System.out.println("Index: "+ll.recSearch(3));
         ll.reverse();
         print();
-        System.out.println("Removed: "+deleteNthFromLast(2));
+        System.out.println("Removed: "+ll.deleteNthFromLast(2));
         print();
+        System.out.println("Mid: "+findMid().data);
     }
 }
