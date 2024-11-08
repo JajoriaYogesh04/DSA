@@ -39,6 +39,43 @@ public class RemoveCycle {
         }
         tail.next= temp;
     }
+    public static boolean isCycle(){
+        Node slow= head;
+        Node fast= head;
+        while(fast!=null && fast.next!=null){
+            slow= slow.next;
+            fast= fast.next.next;
+            if(slow==fast){
+                return true;
+            }
+        }
+        return false;
+    }
+    public static void removeCycle(){
+        Node slow= head;
+        Node fast= head;
+        boolean cyclic= false;
+        while(fast!=null && fast.next!=null){
+            slow= slow.next;
+            fast= fast.next.next;
+            if(slow==fast){
+                cyclic= true;
+                break;
+            }
+        }
+        if(cyclic==false){
+            return;
+        }
+        slow= head;
+        Node prev= null;
+        while(fast!=slow){
+            prev= fast;
+            slow= slow.next;
+            fast= fast.next;
+        }
+        prev.next= null;
+        tail= prev;
+    }
     public static void main(String args[]){
         RemoveCycle rc= new RemoveCycle();
         rc.addLast(0);
@@ -50,8 +87,9 @@ public class RemoveCycle {
         rc.addLast(6);
         rc.addLast(7);
         rc.print();
-        rc.makeCyclic(2);
-        
-        print();
+        rc.makeCyclic(6);
+        System.out.println(rc.isCycle()? "CYCLIC" : "NON CYCLIC");
+        rc.removeCycle();
+        System.out.println(rc.isCycle()? "CYCLIC" : "NON CYCLIC");
     }
 }
