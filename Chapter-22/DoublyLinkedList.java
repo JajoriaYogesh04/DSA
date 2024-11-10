@@ -50,6 +50,23 @@ public class DoublyLinkedList{
         size--;
         return val;
     }
+    public int removeLast(){
+        if(head==null){
+            return Integer.MIN_VALUE;
+        }
+        if(head.next==null){
+            int val= head.data;
+            head= tail= null;
+            size--;
+            return val;
+        }
+        int val= tail.data;
+        Node temp= tail.prev; 
+        temp.next= null;
+        tail= temp;
+        size--;
+        return val;
+    }
     public void print(){
         if(head==null){
             System.out.println("null");
@@ -80,6 +97,9 @@ public class DoublyLinkedList{
         dll.print();
         System.out.println("size: "+size);
         System.out.println("remove: "+dll.removeFirst());
+        dll.print();
+        System.out.println("size: "+size);
+        System.out.println("remove: "+dll.removeLast());
         dll.print();
         System.out.println("size: "+size);
     }
