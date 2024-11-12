@@ -79,9 +79,21 @@ public class DoublyLinkedList{
         }
         System.out.println("null");
     }
+    public void printCircular() {
+        if (head == null) {
+            System.out.println("null");
+            return;
+        }
+        Node temp = head;
+        do {
+            System.out.print(temp.data + "<->");
+            temp = temp.next;
+        } while (temp != head); // Stop when we return to the head node
+        System.out.println("(circular)");
+    }
     public void reverse(){
         Node prev= null;
-        Node curr= head;
+        Node curr= tail= head;
         Node next;
         while(curr!=null){
             next= curr.next;
@@ -91,6 +103,13 @@ public class DoublyLinkedList{
             curr= next;
         }
         head= prev;
+
+    }
+    public void makeCircular(){
+        if(tail!=null && tail.next==null){
+            tail.next= head;
+            head.prev= tail;    
+        }
     }
     public static void main(String args[]){
         DoublyLinkedList dll= new DoublyLinkedList();
@@ -117,5 +136,7 @@ public class DoublyLinkedList{
         System.out.println("size: "+size);
         dll.reverse();
         dll.print();
+        dll.makeCircular();
+        dll.printCircular();
     }
 }
