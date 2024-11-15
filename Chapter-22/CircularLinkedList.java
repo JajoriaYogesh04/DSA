@@ -20,8 +20,35 @@ public class CircularLinkedList{
         }
         Node newNode= new Node();
         newNode.data= data;
-        newNode.next= last.next;             //newNode.next= tail.next;
+        newNode.next= last.next;           
         last.next= newNode;
+    }
+    public void addBetween(int data, int idx){
+        if(last==null){
+            addEmpty(data);
+            return;
+        }
+        if(idx<=0){
+            System.out.println("INVALID");
+            return;
+        }
+        Node newNode= new Node();
+        newNode.data= data;
+        int i=0;
+        Node temp= last.next;
+        while(i<idx-1){
+            temp=temp.next;
+            i++;
+            if(temp==last.next){
+                System.out.println("OUT OF BOUND");
+                return;
+            }
+        }
+        newNode.next= temp.next;
+        temp.next= newNode;
+        if(temp==last){
+            last= newNode;
+        }
     }
     public void addLast(int data){
         if(last==null){
@@ -55,6 +82,7 @@ public class CircularLinkedList{
         cll.addFirst(3);
         cll.addLast(4);
         cll.addLast(5);
+        cll.addBetween(6,3);
         cll.print();
     }
 }
