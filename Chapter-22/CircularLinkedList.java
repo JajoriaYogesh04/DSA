@@ -61,6 +61,15 @@ public class CircularLinkedList{
         last.next= newNode;
         last= newNode;
     }
+    public void deleteNode(int key){
+        if(last==null){
+            return;
+        }
+        if(last.next== last){
+            last= null;
+            return;
+        }
+    }
     public void print(){
         if(last==null){
             System.out.println("null");
@@ -75,14 +84,16 @@ public class CircularLinkedList{
     }
     public static void main(String args[]){
         CircularLinkedList cll= new CircularLinkedList();
-        cll.print();
+        // cll.print();
         cll.addEmpty(0);
-        cll.addFirst(1);
-        cll.addFirst(2);
-        cll.addFirst(3);
-        cll.addLast(4);
-        cll.addLast(5);
-        cll.addBetween(6,3);
+        // cll.addFirst(1);
+        // cll.addFirst(2);
+        // cll.addFirst(3);
+        // cll.addLast(4);
+        // cll.addLast(5);
+        // cll.addBetween(6,3);
+        cll.print();
+        cll.deleteNode(0);
         cll.print();
     }
 }
