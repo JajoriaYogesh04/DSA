@@ -62,12 +62,20 @@ public class CircularLinkedList{
         last= newNode;
     }
     public void deleteNode(int key){
-        if(last==null){
+        if(last==null){                     //empty
             return;
         }
-        if(last.next== last){
+        if(last.data== key && last.next== last){               //one node
             last= null;
             return;
+        }
+        Node temp= last;
+        if(last.data==key){                                     //last node
+            while(temp.next!=last){
+                temp= temp.next;
+            }
+            temp.next= last.next;
+            temp= last;
         }
     }
     public void print(){
@@ -86,14 +94,14 @@ public class CircularLinkedList{
         CircularLinkedList cll= new CircularLinkedList();
         // cll.print();
         cll.addEmpty(0);
-        // cll.addFirst(1);
-        // cll.addFirst(2);
-        // cll.addFirst(3);
-        // cll.addLast(4);
-        // cll.addLast(5);
-        // cll.addBetween(6,3);
+        cll.addFirst(1);
+        cll.addFirst(2);
+        cll.addFirst(3);
+        cll.addLast(4);
+        cll.addLast(5);
+        cll.addBetween(6,3);
         cll.print();
-        cll.deleteNode(0);
+        cll.deleteNode(5);
         cll.print();
     }
 }
