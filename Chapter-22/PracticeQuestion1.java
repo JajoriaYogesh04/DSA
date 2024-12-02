@@ -19,50 +19,18 @@ public class PracticeQuestion1{
         }
         System.out.println("null");
     }
-    public static int size(Node head){
-        Node temp= head;
-        int i=0;
-        while(temp!=null){
-            temp= temp.next;
-            i++;
-        }
-        return i;
-    }
-    public static int intersectionNode(Node head1, Node head2){
-        if(head1==null || head2==null){
-            return -1;
-        }
-        int size1= size(head1);
-        int size2= size(head2);
-        System.out.println("size head1: "+size1);
-        System.out.println("size head2: "+size2);
-        int offset= 0;
-        Node longList= null;
-        Node shortList= null;
-        if(size1>=size2){
-            longList= head1;
-            shortList= head2;
-            offset= size1-size2;
-        }
-        else{
-            longList= head2;
-            shortList= head1;
-            offset= size2- size1;
-        }
-        Node tempLong= longList;
-        int i=0;
-        while(i<offset){
-            tempLong= tempLong.next;
-            i++;
-        }
-        while(tempLong!= null && shortList!= null){
-            if(tempLong==shortList){
-                return tempLong.data;
+    public static Node intersectionNode(Node head1, Node head2){
+        while(head1!=null){
+            Node temp= head2;
+            while(temp!=null){
+                if(temp==head1){
+                    return head1;
+                }
+                temp= temp.next;
             }
-            tempLong= tempLong.next;
-            shortList= shortList.next;
+            head1= head1.next;
         }
-        return -1;
+        return null;
     }
     public static void main(String args[]){
         Node head1= new Node(1);
@@ -76,6 +44,7 @@ public class PracticeQuestion1{
         intersect.next= new Node(7);
         print(head1);
         print(head2);
-        System.out.println("Intersect At: "+intersectionNode(head1, head2));
+        Node intersecNode= intersectionNode(head1, head2);
+        System.out.println("Intersect At: "+intersecNode.data);
     }
 }
