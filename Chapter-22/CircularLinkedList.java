@@ -71,11 +71,19 @@ public class CircularLinkedList{
         }
         Node temp= last;
         if(last.data==key){                                     //last node
-            while(temp.next!=last){
+            while(temp.next!=last){ 
                 temp= temp.next;
             }
             temp.next= last.next;
             temp= last;
+            return;
+        }
+        while(temp.next!= last && temp.next.data!=key){
+            temp= temp.next;
+        }
+        if(temp.next.data==key){
+            temp.next= temp.next.next;
+            return;
         }
     }
     public void print(){
@@ -86,7 +94,7 @@ public class CircularLinkedList{
         Node temp= last.next;
         do{
             System.out.print(temp.data+"->");
-            temp= temp.next;
+            temp= temp.next;    
         }while(temp!=last.next);
         System.out.println("circular");
     }
@@ -102,6 +110,10 @@ public class CircularLinkedList{
         cll.addBetween(6,3);
         cll.print();
         cll.deleteNode(5);
+        cll.print();
+        cll.deleteNode(6);
+        cll.print();
+        cll.deleteNode(3);
         cll.print();
     }
 }
