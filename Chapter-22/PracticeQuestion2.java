@@ -44,7 +44,7 @@ public class PracticeQuestion2 {
             }
             Node del= curr.next;
             int delete= 0;
-            while(delete<n && curr!=null){
+            while(delete<n && del!=null){
                 del= del.next;
                 delete++;
             }
