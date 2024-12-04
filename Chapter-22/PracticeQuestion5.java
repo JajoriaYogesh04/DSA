@@ -20,21 +20,6 @@ public class PracticeQuestion5 {
         System.out.println("null");
     }
     public static Node sortedMerge(Node head1, Node head2){
-        // Node temp1= head1;
-        // Node temp2= head2;
-        // Node merge= new Node(-1);
-        // while(temp1!=null || temp2!=null){
-        //     if(temp1.data<=temp2.data){
-        //         merge.next= temp1;
-        //         temp1= temp1.next;
-        //     }
-        //     else{
-        //         merge.next= temp2;
-        //         temp2= temp2.next;
-        //     }
-        //     merge= merge.next;
-        // }
-        // Node merge= null;
         if(head1==null){
             return head2;
         }
