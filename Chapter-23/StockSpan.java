@@ -1,6 +1,7 @@
 import java.util.*;
-public class StackSpan {
-    public static int[] stockSpan(int stock[], int span[]){
+public class StockSpan {
+    public static int[] stockSpan(int stock[]){
+        int span[]= new int[stock.length];
         Stack<Integer> s= new Stack<>();
         span[0]= 1;
         s.push(0);
@@ -25,9 +26,20 @@ public class StackSpan {
         }
         System.out.println();
     }
+    public static void inputArray(int arr[]){
+        Scanner sc= new Scanner(System.in);
+        for(int i=0; i<arr.length; i++){
+            System.out.print("Enter: ");
+            arr[i]= sc.nextInt();
+        }
+    }
     public static void main(String args[]){
-        int stock[]= {100,80,60,70,60,85,100};
-        int span[]= new int[stock.length];
-        printArray(stockSpan(stock, span));
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter Length: ");
+        int n= sc.nextInt();
+        int stock[]= new int[n]; 
+        inputArray(stock);       
+        // int stock[]= {100,80,60,70,60,85,100};
+        printArray(stockSpan(stock));
     }
 }
