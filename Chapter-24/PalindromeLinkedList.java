@@ -82,7 +82,7 @@ public class PalindromeLinkedList {
         System.out.println("word stack:-");
         printStack(word);
         Node temp=head;
-        while(!word.isEmpty() && temp!=null){
+        while(!word.isEmpty()){
             if(word.pop()!=temp.data){
                 return false;
             }
