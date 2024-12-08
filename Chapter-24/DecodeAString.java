@@ -54,8 +54,20 @@ public class DecodeAString {
         return decode;
     }
     public static void main(String args[]){
-        String encode= "20[leetcode]";
-        String decode= decodeAString(encode);
-        System.out.println(decode);
+        // Test cases
+        String[] testCases = {
+            "3[a2[c]]",        // Nested encoding
+            "2[abc]3[cd]ef",   // Mixed encoding
+            "10[a]",           // Large repeat count
+            "20[leetcode]",    // Large repeat count with long string
+            "3[ab]",           // Simple case
+            "2[a2[b4[F]]]c",   // Deeply nested encoding
+            "3[z]2[2[y]pq4[2[jk]e1[f]]]ef" // Complex case
+        };
+        for (String test : testCases) {
+            System.out.println("Encoded: " + test);
+            System.out.println("Decoded: " + decodeAString(test));
+            System.out.println();
+        }
     }
 }
