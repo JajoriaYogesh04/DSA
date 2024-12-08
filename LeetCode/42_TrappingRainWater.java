@@ -1,3 +1,5 @@
+//Array Approach
+
 class Solution {
     public int trap(int[] arr) {
         int leftMax= Integer.MIN_VALUE;
@@ -36,5 +38,28 @@ class Solution {
         }
 
         return volume;
+    }
+}
+
+
+//Stack Approach
+
+class Solution {
+    public int trap(int[] arr) {
+        Stack<Integer> s= new Stack<>();
+        int vol= 0;
+        for(int i=0; i<arr.length; i++){
+            while(!s.isEmpty() && arr[i]>arr[s.peek()]){
+                int popheight= arr[s.pop()];
+                if(s.isEmpty()){
+                    break;
+                }
+                int dist= i-s.peek()-1;
+                int level= Math.min(arr[i], arr[s.peek()])-popheight;
+                vol+=dist*level;
+            }
+            s.push(i);
+        }
+        return vol;
     }
 }
