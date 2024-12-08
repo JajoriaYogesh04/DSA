@@ -7,8 +7,14 @@ public class DecodeAString {
         String decode="";
         for(int i=0; i<n; i++){
             char ch= encode.charAt(i);
-            if(ch=='0'||ch=='1'||ch=='2'||ch=='3'||ch=='4'||ch=='5'||ch=='6'||ch=='7'||ch=='8'||ch=='9'){
-                num.push(ch-'0');
+            int count=0;
+            if(Character.isDigit(ch)){
+                while(Character.isDigit(encode.charAt(i))){
+                    count= 10*count+(encode.charAt(i)-'0');
+                    i++;
+                }
+                i--;
+                num.push(count);
             }
             else if(ch==']'){
                 String temp= "";
@@ -18,15 +24,24 @@ public class DecodeAString {
                 if(!str.isEmpty() && str.peek()=='['){
                     str.pop();
                 }
-                if(!num.isEmpty()){
-                    String sb= "";
-                    int itr= num.pop();
-                    for(int j=0; j<itr; j++){
-                        sb+=temp;
-                    }
-                    for(int j=0; j<temp.length()*itr; j++){
-                        str.push(sb.charAt(j));
-                    }
+                if(!num.isEmpty()){ 
+                    count= num.pop();
+                }
+                String sb= "";
+                for(int j=0; j<count; j++){
+                    sb+=temp;
+                }
+                for(int j=0; j<temp.length()*count; j++){
+                    str.push(sb.charAt(j));
+                }
+            }
+            else if(ch=='['){
+                if(i>0 && Character.isDigit(encode.charAt(i-1))){
+                    str.push(ch);
+                }
+                else{
+                    str.push(ch);
+                    num.push(1);
                 }
             }
             else{
@@ -39,7 +54,7 @@ public class DecodeAString {
         return decode;
     }
     public static void main(String args[]){
-        String encode= "2[a3[b]1[s]]";
+        String encode= "2[abc]3[cd]ef";
         String decode= decodeAString(encode);
         System.out.println(decode);
     }
