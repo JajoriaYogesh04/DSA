@@ -54,7 +54,7 @@ public class DecodeAString {
         return decode;
     }
     public static void main(String args[]){
-        String encode= "2[abc]3[cd]ef";
+        String encode= "20[leetcode]";
         String decode= decodeAString(encode);
         System.out.println(decode);
     }
