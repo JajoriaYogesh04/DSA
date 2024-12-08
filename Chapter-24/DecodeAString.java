@@ -9,7 +9,7 @@ public class DecodeAString {
             char ch= encode.charAt(i);
             int count=0;
             if(Character.isDigit(ch)){
-                while(Character.isDigit(encode.charAt(i))){
+                while(i<n && Character.isDigit(encode.charAt(i))){
                     count= 10*count+(encode.charAt(i)-'0');
                     i++;
                 }
