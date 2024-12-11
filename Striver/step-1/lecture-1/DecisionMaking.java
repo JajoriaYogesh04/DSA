@@ -17,7 +17,7 @@ class GFG {
             int m;
             m = Integer.parseInt(br.readLine());
             
-            Solution obj = new Solution();
+            CN_MergeAllOverlapingIntervals obj = new CN_MergeAllOverlapingIntervals();
             String res = obj.compareNM(n, m);
             
             System.out.println(res);
