@@ -16,7 +16,7 @@ class GFG{
             for(int i = 0;i < choice;i++)
                 arr.add(Double.parseDouble(a[i]));
             
-            Solution ob = new Solution();
+            MergeAllOverlapingIntervals ob = new MergeAllOverlapingIntervals();
             if(choice == 1)
                 System.out.println(String.format("%.2f", ob.switchCase(choice, arr)));
             else
