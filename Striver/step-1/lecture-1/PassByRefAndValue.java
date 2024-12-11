@@ -13,7 +13,7 @@ class GFG {
         while (T-- > 0) {
             int n = sc.nextInt();
             int m = sc.nextInt();
-            Solution obj = new Solution();
+            CN_MergeAllOverlapingIntervals obj = new CN_MergeAllOverlapingIntervals();
             int ans[] = obj.passedBy(n, m);
 
             System.out.println(ans[0] + " " + ans[1]);
