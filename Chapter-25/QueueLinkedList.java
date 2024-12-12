@@ -17,6 +17,7 @@ public class QueueLinkedList{
             Node newNode= new Node(data);
             if(head==null && tail==null){
                 head=tail= newNode;
+                return;
             }
             tail.next= newNode;
             tail= newNode;
