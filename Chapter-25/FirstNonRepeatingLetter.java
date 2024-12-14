@@ -1,7 +1,7 @@
 import java.util.*;
 public class FirstNonRepeatingLetter{
     public static String firstNonRepeatingLetter(String str){
-        String result="";
+        StringBuilder result= new StringBuilder();
         int arr[]= new int[26];
         Queue<Character> q= new LinkedList<>();
         for(int i=0; i<str.length(); i++){
@@ -11,13 +11,13 @@ public class FirstNonRepeatingLetter{
                 q.remove();
             }
             if(q.isEmpty()){
-                result+="-1";
+                result.append("-1");
             }
             else{
-                result+=q.peek();
+                result.append(q.peek());
             }
         }
-        return result;
+        return result.toString();
     }
     public static void main(String args[]){
         // String str= "aabccxb";
