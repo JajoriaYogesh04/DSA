@@ -1,17 +1,18 @@
 import java.util.*;
 public class FractionalKnapsack{
-    public static int fractionalKnapsack(int weight[], int value[], int capacity){
-        int ratio[][]= new int[value.length][2];
+    public static double fractionalKnapsack(int weight[], int value[], int capacity){
+        double ratio[][]= new double[value.length][2];
         for(int i=0; i<ratio.length; i++){
             ratio[i][0]= i;
-            ratio[i][1]= value[i]/weight[i];
+            ratio[i][1]= (double)value[i]/weight[i];
         }
         Arrays.sort(ratio, Comparator.comparingDouble(o->o[1]));
-        int maxValue= 0;
+        double maxValue= 0;
         for(int i=ratio.length-1; i>=0; i--){
-            if(capacity>=weight[ratio[i][0]]){
-                maxValue+=value[ratio[i][0]];
-                capacity-=weight[ratio[i][0]];
+            int idx= (int)ratio[i][0];
+            if(capacity>=weight[idx]){
+                maxValue+=(double)value[idx];
+                capacity-=weight[idx];
             }
             else{
                 maxValue+=capacity*ratio[i][1];
@@ -21,11 +22,6 @@ public class FractionalKnapsack{
         return maxValue;
     }
     public static void main(String args[]){
-        // int weight[]= {10, 20, 30};
-        // int value[]= {60, 100, 120};
-        // int capacity= 50;
-        // System.out.println("Maximum value: "+fractionalKnapsack(weight, value, capacity));
-
         // Test case 1: Basic example
         int weight1[] = {10, 20, 30};
         int value1[] = {60, 100, 120};
