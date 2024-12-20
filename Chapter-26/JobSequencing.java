@@ -31,8 +31,6 @@ public class JobSequencing{
         System.out.println("Maximum profit: " + maxProfit);
     }
     public static void main(String args[]){
-        // int jobinfo[][]={{4,20}, {1,10},{1,40},{1,30}};
-        // jobSequencing(jobinfo);
          // Test Case 1: Given example
         System.out.println("Test Case 1:");
         int jobinfo1[][] = { { 4, 20 }, { 1, 10 }, { 1, 40 }, { 1, 30 } };
