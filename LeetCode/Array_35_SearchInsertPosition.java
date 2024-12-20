@@ -2,18 +2,17 @@ class Solution {
     public int searchInsert(int[] nums, int target) {
         int si= 0;
         int ei= nums.length-1;
+        int lb= nums.length;
         while(si<=ei){
-            int mid= si+(ei-si)/2;
-            if(nums[mid]==target){
-                return mid;
+            int mi= si+(ei-si)/2;
+            if(nums[mi]>=target){
+                lb= mi;
+                ei= mi-1;
             }
-            else if(target<nums[mid]){
-                ei= mid-1;
-            }
-            else if(target>nums[mid]){
-                si= mid+1;
+            else{
+                si= mi+1;
             }
         }
-        return si;
+        return lb;
     }
 }
