@@ -1,13 +1,12 @@
 public class KthLargetOddNumberInRange{
     public static int kthLargestOddNumberInGivenRange(int l, int r, int k){
-        int lgodd= 0;
         if(k<=0){
             return 0;
         }
         if((r&1)>0){                  //odd
             int count= (int)Math.ceil(((r-l+1)/2)+((r-l+1)%2));
             if(k>count){
-                return 6;
+                return 0;
             }
             else{
                 return (r-(2*k)+2);
