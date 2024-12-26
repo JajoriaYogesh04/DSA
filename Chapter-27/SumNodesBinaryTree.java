@@ -31,10 +31,6 @@ public class SumNodesBinaryTree{
         }
     }
     public static void main(String args[]){
-        // int nodes[]={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
-        // Node root= BinaryTree.buildTree(nodes);
-        // System.out.println(BinaryTree.sumNodes(root));
-
         // Test Case 1: Provided example
         int nodes1[] = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
         BinaryTree.idx = -1; // Reset static index before building tree
