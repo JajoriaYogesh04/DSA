@@ -1,5 +1,6 @@
-import java.util.*;
-public class BuildTreePreorder{
+import java.util.Queue;
+import java.util.LinkedList;
+public class BuildTreeTraversal{
     static class Node{
         int data;
         Node left;
@@ -78,23 +79,22 @@ public class BuildTreePreorder{
     }
     public static void main(String args[]){
         int nodes[]={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
-        BinaryTree tree= new BinaryTree();
-        Node root= tree.buildTree(nodes);
+        Node root= BinaryTree.buildTree(nodes);
         // System.out.println(root.data);
 
         System.out.print("PreOrder: ");
-        tree.preorder(root);
+        BinaryTree.preorder(root);
         System.out.println();
 
         System.out.print("InOrder: ");
-        tree.inorder(root);
+        BinaryTree.inorder(root);
         System.out.println();
 
         System.out.print("PostOrder: ");
-        tree.postorder(root);
+        BinaryTree.postorder(root);
         System.out.println();
 
         System.out.println("LevelOrder: ");
-        tree.levelorder(root);
+        BinaryTree.levelorder(root);
     }
 }
