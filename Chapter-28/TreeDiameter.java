@@ -40,6 +40,24 @@ public class TreeDiameter{
             int selfdia= lh+rh+1;
             return Math.max(Math.max(leftdia,rightdia), selfdia);
         }
+        static class Info{
+            int dia;
+            int ht;
+            Info(int dia, int ht){
+                this.dia=dia;
+                this.ht=ht;
+            }
+        }
+        public static Info diameterOptimal(Node root){
+            if(root==null){
+                return new Info(0,0);
+            }
+            Info leftInfo= diameterOptimal(root.left);
+            Info rightInfo= diameterOptimal(root.right);
+            int finalDia= Math.max(Math.max(leftInfo.dia, rightInfo.dia), (leftInfo.ht+rightInfo.ht+1));
+            int finalHt= Math.max(leftInfo.ht, rightInfo.ht)+1;
+            return new Info(finalDia, finalHt);            
+        }
     }
     public static void main(String args[]){
         // Test case 1: Provided tree
@@ -47,6 +65,7 @@ public class TreeDiameter{
         BinaryTree.idx=-1;
         Node root1 = BinaryTree.buildTree(nodes1);
         System.out.println("Diameter of tree 1: " + BinaryTree.diameter(root1)); // Expected: 5
+        System.out.println("Diameter Optimal of tree 1: " + BinaryTree.diameterOptimal(root1).dia); // Expected: 5
         
 
         // Test case 2: Single node tree
@@ -54,6 +73,7 @@ public class TreeDiameter{
         BinaryTree.idx=-1;
         Node root2 = BinaryTree.buildTree(nodes2);
         System.out.println("Diameter of tree 2: " + BinaryTree.diameter(root2)); // Expected: 1
+        System.out.println("Diameter Optimal of tree 2: " + BinaryTree.diameterOptimal(root2).dia); // Expected: 1
         
 
         // Test case 3: Empty tree
@@ -61,6 +81,7 @@ public class TreeDiameter{
         BinaryTree.idx=-1;
         Node root3 = BinaryTree.buildTree(nodes3);
         System.out.println("Diameter of tree 3: " + BinaryTree.diameter(root3)); // Expected: 0
+        System.out.println("Diameter Optimal of tree 3: " + BinaryTree.diameterOptimal(root3).dia); // Expected: 0
         
 
         // Test case 4: Unbalanced tree
@@ -68,6 +89,7 @@ public class TreeDiameter{
         BinaryTree.idx=-1;
         Node root4 = BinaryTree.buildTree(nodes4);
         System.out.println("Diameter of tree 4: " + BinaryTree.diameter(root4)); // Expected: 4
+        System.out.println("Diameter Optimal of tree 4: " + BinaryTree.diameterOptimal(root4).dia); // Expected: 4
         
 
         // Test case 5: Complete binary tree
@@ -75,5 +97,6 @@ public class TreeDiameter{
         BinaryTree.idx=-1;
         Node root5 = BinaryTree.buildTree(nodes5);
         System.out.println("Diameter of tree 5: " + BinaryTree.diameter(root5)); // Expected: 5
+        System.out.println("Diameter Optimal of tree 5: " + BinaryTree.diameterOptimal(root5).dia); // Expected: 5
     }
 }
