@@ -38,7 +38,7 @@ public class LowestCommonAncestor{
             list.remove(list.size()-1);
             return false;
         }
-        public static Node lowestCommonAncestor(Node root, Node n1, Node n2){
+        public static Node lowestCommonAncestor1(Node root, Node n1, Node n2){
             ArrayList<Node> path1= new ArrayList<>();
             ArrayList<Node> path2= new ArrayList<>();
             getPath(root, n1, path1);
@@ -51,20 +51,35 @@ public class LowestCommonAncestor{
             }
             return path1.get(i-1);
         }
-
+        public static Node lowestCommonAncestor2(Node root, Node n1, Node n2){
+            if(root==null||root==n1||root==n2){
+                return root;
+            }
+            Node leftLCA= lowestCommonAncestor2(root.left, n1, n2);
+            Node rightLCA= lowestCommonAncestor2(root.right, n1, n2);
+            if(leftLCA==null){
+                return rightLCA;
+            }
+            if(rightLCA==null){
+                return leftLCA;
+            }
+            return root;
+        }
     }
     public static void main(String args[]){
         int nodes[]={1,2,4,-1,-1,5,-1,-1,3,6,-1,-1,7,-1,-1};
         Node root= BinaryTree.buildTree(nodes);
-        // Node n1= root.left.left;
-        // Node n2= root.right.right;
-        // Node lca= BinaryTree.lowestCommonAncestor(root, n1, n2);
-        // System.out.println(lca.data);
         // Test Cases
-        System.out.println("LCA of 4 and 5: " + BinaryTree.lowestCommonAncestor(root, root.left.left, root.left.right).data); // 2
-        System.out.println("LCA of 4 and 6: " + BinaryTree.lowestCommonAncestor(root, root.left.left, root.right.left).data); // 1
-        System.out.println("LCA of 3 and 7: " + BinaryTree.lowestCommonAncestor(root, root.right, root.right.right).data);  // 3
-        System.out.println("LCA of 4 and 4: " + BinaryTree.lowestCommonAncestor(root, root.left.left, root.left.left).data); // 4
-        System.out.println("LCA of 1 and 7: " + BinaryTree.lowestCommonAncestor(root, root, root.right.right).data);        // 1
+        System.out.println("LCA of 4 and 5: " + BinaryTree.lowestCommonAncestor1(root, root.left.left, root.left.right).data); // 2
+        System.out.println("LCA of 4 and 6: " + BinaryTree.lowestCommonAncestor1(root, root.left.left, root.right.left).data); // 1
+        System.out.println("LCA of 3 and 7: " + BinaryTree.lowestCommonAncestor1(root, root.right, root.right.right).data);  // 3
+        System.out.println("LCA of 4 and 4: " + BinaryTree.lowestCommonAncestor1(root, root.left.left, root.left.left).data); // 4
+        System.out.println("LCA of 1 and 7: " + BinaryTree.lowestCommonAncestor1(root, root, root.right.right).data);        // 1
+         // Test Cases
+        System.out.println("LCA of 4 and 5: " + BinaryTree.lowestCommonAncestor2(root, root.left.left, root.left.right).data); // 2
+        System.out.println("LCA of 4 and 6: " + BinaryTree.lowestCommonAncestor2(root, root.left.left, root.right.left).data); // 1
+        System.out.println("LCA of 3 and 7: " + BinaryTree.lowestCommonAncestor2(root, root.right, root.right.right).data);  // 3
+        System.out.println("LCA of 4 and 4: " + BinaryTree.lowestCommonAncestor2(root, root.left.left, root.left.left).data); // 4
+        System.out.println("LCA of 1 and 7: " + BinaryTree.lowestCommonAncestor2(root, root, root.right.right).data);        // 1
     }
 }
