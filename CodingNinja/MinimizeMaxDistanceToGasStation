@@ -1,0 +1,26 @@
+public class Solution {
+    public static double MinimiseMaxDistance(int []arr, int K){
+        // Write your code here.
+        int howmany[]=new int[arr.length-1];
+        for(int gas=0;gas<K;gas++){
+            double maxdist=-1;
+            int maxidx=-1;
+            for(int i=0;i<arr.length-1;i++){
+                double diff=arr[i+1]-arr[i];
+                double seclen=diff/(double)(howmany[i]+1);
+                if(seclen>maxdist){
+                    maxdist=seclen;
+                    maxidx=i;
+                }
+            }
+            howmany[maxidx]++;
+        }
+        double maxi=-1;
+        for(int i=0;i<arr.length-1;i++){
+            double diff=arr[i+1]-arr[i];
+            double seclen=diff/(double)(howmany[i]+1);
+            maxi=Math.max(maxi,seclen);
+        }
+        return maxi;
+    }
+}
