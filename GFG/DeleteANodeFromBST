@@ -1,0 +1,32 @@
+
+
+// User function Template for Java
+
+class Tree {
+    public static Node inorderSuccessor(Node root){
+        while(root!=null&&root.left!=null){
+            root=root.left;
+        }
+        return root;
+    }
+    // Function to delete a node from BST.
+    public static Node deleteNode(Node root, int X) {
+        // code here.
+        if(root==null)return null;
+        if(X<root.data){
+            root.left=deleteNode(root.left,X);
+        }
+        else if(X>root.data){
+            root.right=deleteNode(root.right,X);
+        }
+        else{
+            if(root.left==null&&root.right==null)return null;
+            if(root.left==null)return root.right;
+            else if(root.right==null)return root.left;
+            Node is=inorderSuccessor(root.right);
+            root.data=is.data;
+            root.right=deleteNode(root.right,is.data);
+        }
+        return root;
+    }
+}
