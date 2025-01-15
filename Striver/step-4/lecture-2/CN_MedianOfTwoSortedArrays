@@ -1,0 +1,40 @@
+public class Solution {
+    public static double median(int[] a, int[] b) {
+    	// Write your code here.
+        int n1=a.length;
+        int n2=b.length;
+        int merge[]=new int[n1+n2];
+        int i=0;
+        int j=0;
+        int k=0;
+        while(i<n1&&j<n2){
+            if(a[i]<=b[j]){
+                merge[k]=a[i];
+                i++;
+                k++;
+            }
+            else{
+                merge[k]=b[j];
+                j++;
+                k++;
+            }
+        }
+        while(i<n1){
+            merge[k]=a[i];
+            i++;
+            k++;
+        }
+        while(j<n2){
+            merge[k]=b[j];
+            j++;
+            k++;
+        }
+        int mid=(n1+n2)/2;
+        if((n1+n2)%2==0){
+            return (double)(merge[mid-1]+merge[mid])/2;
+        }
+        else{
+            return (double)(merge[mid]);
+        }
+    }
+}
