@@ -1,0 +1,39 @@
+import java.util.* ;
+import java.io.*; 
+/***********************************************************
+
+ Following is the TreeNode class structure:
+
+ class TreeNode {
+    public:
+    T data;
+    TreeNode<T> *left;
+    TreeNode<T> *right;
+
+    TreeNode(T data) {
+        this->data = data;
+        left = NULL;
+        right = NULL;
+    }
+ };
+
+ ************************************************************/
+
+class Solution {
+
+  public static int countTheNodes(TreeNode<Integer>root, int L, int R) {
+    // Write your code here.
+    if(root==null)return 0;
+    int count=0;
+    if(L<=root.data&&root.data<=R){
+      count++;
+    }
+    if(L<=root.data){
+      count+=countTheNodes(root.left,L,R);
+    }
+    if(R>=root.data){
+      count+=countTheNodes(root.right,L,R);
+    }
+    return count;
+  }
+}
