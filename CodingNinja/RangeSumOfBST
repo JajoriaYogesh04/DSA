@@ -1,0 +1,37 @@
+import java.util.* ;
+import java.io.*; 
+/************************************************************
+
+	Following is the TreeNode class structure
+    class TreeNode<T> {
+        public:
+        T data;
+        TreeNode<T> left;
+        TreeNode<T> right;
+
+        TreeNode(T data) {
+            this.data = data;
+            left = null;
+            right = null;
+        }
+ 	}
+
+ ************************************************************/
+
+public class Solution {
+    public static int maxPathSum(BinaryTreeNode<Integer> root, int low, int high) {
+        // Write your code here.
+        int sum=0;
+        if(root==null)return 0;
+        if(low<=root.data&&root.data<=high){
+            sum+=root.data;
+        }
+        if(low<root.data){
+            sum+=maxPathSum(root.left,low,high);
+        }
+        if(root.data<high){
+            sum+=maxPathSum(root.right,low,high);
+        }
+        return sum;
+    }
+}
