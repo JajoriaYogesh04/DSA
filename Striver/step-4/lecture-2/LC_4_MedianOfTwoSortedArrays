@@ -1,0 +1,26 @@
+class Solution {
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int n1=nums1.length;
+        int n2=nums2.length;
+        int n=n1+n2;
+        if(n1>n2)return findMedianSortedArrays(nums2,nums1);
+        int left=(n+1)/2;
+        int si=0;
+        int ei=n1;
+        while(si<=ei){
+            int mi1=si+(ei-si)/2;
+            int mi2=left-mi1;
+            int l1=mi1>0?nums1[mi1-1]:Integer.MIN_VALUE;
+            int l2=mi2>0?nums2[mi2-1]:Integer.MIN_VALUE;
+            int r1=mi1<n1?nums1[mi1]:Integer.MAX_VALUE;
+            int r2=mi2<n2?nums2[mi2]:Integer.MAX_VALUE;
+            if(l1<=r2&&l2<=r1){
+                if(n%2==1)return Math.max(l1,l2);
+                else return (double)(Math.max(l1,l2)+Math.min(r1,r2))/2;
+            }
+            else if(l1>r2)ei=mi1-1;
+            else si=mi1+1;
+        }
+        return 0;
+    }
+}
