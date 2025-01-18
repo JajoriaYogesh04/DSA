@@ -30,14 +30,15 @@ public class PrintInRange{
         if(k1<=root.data && root.data<=k2){
             printInRange(root.left,k1,k2);
             System.out.println(root.data);
-            printInRange(root.right,k1,k2);
+            printInRange(root.right, k1, k2);
         }
-        else if(root.data>k2){
+        else if(k1<root.data){
             printInRange(root.left,k1,k2);
         }
-        else if(root.data<k1){
+        else if(root.data<k2){
             printInRange(root.right,k1,k2);
         }
+        return;
     }
     public static void main(String args[]){
         // Original test case
