@@ -37,14 +37,6 @@ public class RootToLeafPaths{
         list.remove(list.size()-1);
     }
     public static void main(String args[]){
-        // int nodes[]={8,5,3,6,10,11,14};
-        // Node root=null;
-        // for(int i=0;i<nodes.length;i++){
-        //     root=buildBST(root,nodes[i]);
-        // }
-        // // inOrder(root);
-        // ArrayList<Integer>list=new ArrayList<>();
-        // rootToLeafPaths(root,list);
         // Test Case 1: Standard BST
         System.out.println("Test Case 1: Standard BST");
         int nodes1[] = {8, 5, 3, 6, 10, 11, 14};
