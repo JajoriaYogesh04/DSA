@@ -1,0 +1,55 @@
+
+
+//User function Template for Java
+
+// class Node  
+// { 
+//     int data; 
+//     Node left, right; 
+   
+//     public Node(int d)  
+//     { 
+//         data = d; 
+//         left = right = null; 
+//     } 
+// }
+
+
+class Solution{
+    static class Info{
+        boolean validbst;
+        int size;
+        int min;
+        int max;
+        Info(boolean validbst,int size,int min,int max){
+            this.validbst=validbst;
+            this.size=size;
+            this.min=min;
+            this.max=max;
+        }
+    }
+    static int maxsize=0;
+    static Info helper(Node root){
+        if(root==null)return new Info(true,0,Integer.MAX_VALUE,Integer.MIN_VALUE);
+        Info leftinfo=helper(root.left);
+        Info rightinfo=helper(root.right);
+        int size=leftinfo.size+rightinfo.size+1;
+        int min=Math.min(root.data,Math.min(leftinfo.min,rightinfo.min));
+        int max=Math.max(root.data,Math.max(leftinfo.max,rightinfo.max));
+        if(root.data<=leftinfo.max||root.data>=rightinfo.min)return new Info(false,size,min,max);
+        if(leftinfo.validbst&&rightinfo.validbst){
+            maxsize=Math.max(maxsize,size);
+            return new Info(true,size,min,max);
+        }
+        return new Info(false,size,min,max);
+    }
+    // Return the size of the largest sub-tree which is also a BST
+    static int largestBst(Node root)
+    {
+        // Write your code here
+        maxsize=0;
+        helper(root);
+        return maxsize;
+    }
+    
+}
