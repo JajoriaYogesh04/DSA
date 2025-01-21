@@ -1,0 +1,60 @@
+/*********************************************************
+
+ Following is the TreeNode structure:
+
+ class TreeNode {
+     int data;
+     TreeNode left;
+     TreeNode right;
+     BinaryTreeNode() {
+         this.data = 0;
+         this.left = null;
+         this.right = null;
+     }
+     BinaryTreeNode(int data) {
+         this.data = data;
+         this.left = null;
+         this.right = null;
+     }
+     BinaryTreeNode(int data, TreeNode left, TreeNode right) {
+         this.data = data;
+         this.left = left;
+         this.right = right;
+     }
+ };
+ ********************************************************/
+
+public class Solution {
+    static public class Info{
+        boolean isValidBST;
+        int size;
+        int min;
+        int max;
+        Info(boolean isValidBST,int size,int min,int max){
+            this.isValidBST=isValidBST;
+            this.size=size;
+            this.min=min;
+            this.max=max;
+        }
+    }
+    public static Info helper(TreeNode root){
+        if(root==null)return new Info(true,0,Integer.MAX_VALUE,Integer.MIN_VALUE);
+        Info leftinfo=helper(root.left);
+        Info rightinfo=helper(root.right);
+        int size=leftinfo.size+rightinfo.size+1;
+        int min=Math.min(root.data,Math.min(leftinfo.min,rightinfo.min));
+        int max=Math.max(root.data,Math.max(leftinfo.max,rightinfo.max));
+        if(root.data<=leftinfo.max||root.data>=rightinfo.min)return new Info(false,size,min,max);
+        if(leftinfo.isValidBST&&rightinfo.isValidBST){
+            maxsize=Math.max(size,maxsize);
+            return new Info(true,size,min,max);
+        }
+        return new Info(false,size,min,max);
+    }
+    static int maxsize=0;
+    public static int largestBST(TreeNode root) {
+        // Write your code here.
+        helper(root);
+        return maxsize;
+    }
+}
