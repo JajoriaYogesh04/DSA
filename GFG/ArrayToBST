@@ -1,0 +1,18 @@
+
+
+// User function Template for Java
+
+class Solution {
+    public Node helper(int arr[],int si,int ei){
+        if(si>ei)return null;
+        int mid=si+(ei-si)/2;
+        Node newNode=new Node(arr[mid]);
+        newNode.left=helper(arr,si,mid-1);
+        newNode.right=helper(arr,mid+1,ei);
+        return newNode;
+    }
+    public Node sortedArrayToBST(int[] nums) {
+        // Code here
+        return helper(nums,0,nums.length-1);
+    }
+}
