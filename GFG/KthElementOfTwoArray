@@ -1,0 +1,27 @@
+
+
+// User function Template for Java
+
+class Solution {
+    public int kthElement(int a[], int b[], int k) {
+        // code here
+        int n=a.length;
+        int m=b.length;
+        int left=k;
+        if(n>m)return kthElement(b,a,k);
+        int si=Math.max(0,k-m);
+        int ei=Math.min(k,n);
+        while(si<=ei){
+            int mi1=si+(ei-si)/2;
+            int mi2=left-mi1;
+            int l1=0<=mi1-1?a[mi1-1]:Integer.MIN_VALUE;
+            int l2=0<=mi2-1?b[mi2-1]:Integer.MIN_VALUE;
+            int r1=mi1<n?a[mi1]:Integer.MAX_VALUE;
+            int r2=mi2<m?b[mi2]:Integer.MAX_VALUE;
+            if(l1<=r2&&l2<=r1)return Math.max(l1,l2);
+            else if(l2>r1)si=mi1+1;
+            else ei=mi1-1;
+        }
+        return 0;
+    }
+}
