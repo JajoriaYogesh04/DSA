@@ -1,0 +1,31 @@
+class Solution {
+    public int getCount(int arr[],int m){
+        // int si=0;
+        // int ei=m-1;
+        // while(si<=ei){
+        //     int mi=si+(ei-si)/2;
+        //     if(arr[mi]==1)ei=mi-1;
+        //     else si=mi+1;
+        // }
+        // return m-si;
+        int count=0;
+        for(int i=0;i<m;i++){
+            count+=arr[i];
+        }
+        return count;
+    }
+    public int[] rowAndMaximumOnes(int[][] mat) {
+        int idx=0;
+        int maxcount=0;
+        int n=mat.length;
+        int m=mat[0].length;
+        for(int i=0;i<n;i++){
+            int count=getCount(mat[i],m);
+            if(count>maxcount){
+                maxcount=count;
+                idx=i;
+            }
+        }
+        return new int[]{idx,maxcount};
+    }
+}
