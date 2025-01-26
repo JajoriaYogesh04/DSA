@@ -1,16 +1,46 @@
+// import java.util.ArrayList;
+// public class Solution
+// {
+//     public static int maximumOnesRow(ArrayList<ArrayList<Integer>> matrix, int n, int m)
+//     {
+//         //	  Write your code here.
+//         int idx=-1;
+//         int maxcount=0;
+//         for(int i=0;i<n;i++){
+//             int count=0;
+//             for(int j=0;j<m;j++){
+//                 count+=matrix.get(i).get(j);
+//             }
+//             if(count>maxcount){
+//                 maxcount=count;
+//                 idx=i;
+//             }
+//         }
+//         return idx;
+//     }
+// }
+
+
 import java.util.ArrayList;
 public class Solution
 {
+    public static int getCount(ArrayList<Integer>row,int m){
+        int si=0;
+        int ei=m-1;
+        while(si<=ei){
+            int mi=si+(ei-si)/2;
+            if(row.get(mi)==1)ei=mi-1;
+            else si=mi+1;
+        }
+        return m-si;
+    }
     public static int maximumOnesRow(ArrayList<ArrayList<Integer>> matrix, int n, int m)
     {
         //	  Write your code here.
         int idx=-1;
         int maxcount=0;
         for(int i=0;i<n;i++){
-            int count=0;
-            for(int j=0;j<m;j++){
-                count+=matrix.get(i).get(j);
-            }
+            int count=getCount(matrix.get(i),m);
             if(count>maxcount){
                 maxcount=count;
                 idx=i;
