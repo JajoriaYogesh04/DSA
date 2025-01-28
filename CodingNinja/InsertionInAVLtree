@@ -1,0 +1,81 @@
+import java.util.* ;
+import java.io.*; 
+/************************************************************
+
+   Following is the TreeNode class structure
+   
+   class TreeNode<T> { 
+        T data; 
+        int height; 
+        TreeNode<T> left;
+        TreeNode<T> right;
+   
+        TreeNode(T data) { 
+            this.data = data; 
+            left = null; 
+            right = null; 
+            height = 1; 
+        }
+   }
+    
+ ************************************************************/
+
+public class Solution {
+  public static int getHeight(TreeNode<Integer> root){
+    if(root==null)return 0;
+    return root.height;
+  }
+  public static int getBalanceFactor(TreeNode<Integer> root){
+    if(root==null)return 0;
+    return getHeight(root.left)-getHeight(root.right);
+  }
+  public static TreeNode<Integer> rightRotate(TreeNode<Integer>x){
+    TreeNode<Integer>y=x.left;
+    TreeNode<Integer>t1=y.right;
+    y.right=x;
+    x.left=t1;
+    x.height=Math.max(getHeight(x.left),getHeight(x.right))+1;
+    y.height=Math.max(getHeight(y.left),getHeight(y.right))+1;
+    return y;
+  }
+  public static TreeNode<Integer> leftRotate(TreeNode<Integer>x){
+    TreeNode<Integer>y=x.right;
+    TreeNode<Integer>t2=y.left;
+    y.left=x;
+    x.right=t2;
+    x.height=Math.max(getHeight(x.left),getHeight(x.right))+1;
+    y.height=Math.max(getHeight(y.left),getHeight(y.right))+1;
+    return y;
+  }
+  public static TreeNode<Integer> insertNode(TreeNode<Integer> root,int val){
+    if(root==null)return new TreeNode<Integer>(val);
+    if(val<root.data)root.left=insertNode(root.left,val);
+    else if(root.data<val)root.right=insertNode(root.right,val);
+    else return root;
+    root.height=Math.max(getHeight(root.left),getHeight(root.right))+1;
+    int bf=getBalanceFactor(root);
+    if(bf>1&&val<root.left.data){
+      return rightRotate(root);
+    }
+    if(bf<-1&&val>root.right.data){
+      return leftRotate(root);
+    }
+    if(bf>1&&val>root.left.data){
+      root.left=leftRotate(root.left);
+      return rightRotate(root);
+    }
+    if(bf<-1&&val<root.right.data){
+      root.right=rightRotate(root.right);
+      return leftRotate(root);
+    }
+    return root;
+  }
+	public static TreeNode<Integer> insertionInAvlTree(int allNodeValues[], int n) {
+		// Write your code here.
+    TreeNode<Integer>root=null;
+    for(int i=0;i<n;i++){
+      root=insertNode(root,allNodeValues[i]);
+    }
+    return root;
+	}
+}
