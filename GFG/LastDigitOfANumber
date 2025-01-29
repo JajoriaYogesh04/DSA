@@ -1,0 +1,11 @@
+//Back-end complete function Template for Java
+import java.util.*;
+
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        // Print the last digit
+        System.out.print(Math.abs(n%10));
+    }
+}
