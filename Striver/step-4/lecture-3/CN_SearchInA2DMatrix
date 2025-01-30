@@ -1,10 +1,38 @@
+// import java.util.ArrayList;
+// public class Solution {
+//     static boolean searchMatrix(ArrayList<ArrayList<Integer>> mat, int target) {
+//         // Write your code here.
+//         for(int i=0;i<mat.size();i++){
+//             for(int j=0;j<mat.get(0).size();j++){
+//                 if(mat.get(i).get(j)==target)return true;
+//             }
+//         }
+//         return false;
+//     }
+// }
+
+
+
 import java.util.ArrayList;
 public class Solution {
+    static boolean binarySearch(ArrayList<Integer>list,int target){
+        int si=0;
+        int ei=list.size()-1;
+        while(si<=ei){
+            int mi=si+(ei-si)/2;
+            if(list.get(mi)==target)return true;
+            else if(list.get(mi)<target)si=mi+1;
+            else ei=mi-1;
+        }
+        return false;
+    }
     static boolean searchMatrix(ArrayList<ArrayList<Integer>> mat, int target) {
         // Write your code here.
-        for(int i=0;i<mat.size();i++){
-            for(int j=0;j<mat.get(0).size();j++){
-                if(mat.get(i).get(j)==target)return true;
+        int n=mat.size();
+        int m=mat.get(0).size();
+        for(int i=0;i<n;i++){
+            if(mat.get(i).get(0)<=target&&target<=mat.get(i).get(m-1)){
+                return binarySearch(mat.get(i),target);
             }
         }
         return false;
