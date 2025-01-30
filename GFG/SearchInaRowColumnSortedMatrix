@@ -1,0 +1,34 @@
+
+
+
+
+// class Solution {
+//     public static boolean matSearch(int mat[][], int x) {
+//         // your code here
+//         int n=mat.length;
+//         int m=mat[0].length;
+//         long si=0;
+//         long ei=(n*m)-1;
+//         while(si<=ei){
+//             long mi=si+(ei-si)/2;
+//             int row=(int)mi/m;
+//             int col=(int)mi%m;
+//             if(mat[row][col]==x)return true;
+//             else if(mat[row][col]<x)si=mi+1;
+//             else ei=mi-1;
+//         }
+//         return false;
+//     }
+// }
+class Solution {
+    public static boolean matSearch(int mat[][], int x) {
+        int n = mat.length;
+        int m = mat[0].length;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if(mat[i][j]==x)return true;
+            }
+        }
+        return false;
+    }
+}
