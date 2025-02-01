@@ -1,0 +1,29 @@
+
+
+
+
+class Solution {
+    public static boolean binarySearch(int arr[],int x){
+        int si=0;
+        int ei=arr.length-1;
+        while(si<=ei){
+            int mi=si+(ei-si)/2;
+            if(arr[mi]==x)return true;
+            else if(arr[mi]<x)si=mi+1;
+            else ei=mi-1;
+        }
+        return false;
+    }
+    // Function to search a given number in row-column sorted matrix.
+    public boolean searchRowMatrix(int[][] mat, int x) {
+        // code here
+        int n=mat.length;
+        int m=mat[0].length;
+        for(int i=0;i<n;i++){
+            if(mat[i][0]<=x&&x<=mat[i][m-1]){
+                if(binarySearch(mat[i],x))return true;
+            }
+        }
+        return false;
+    }
+}
