@@ -1,24 +1,41 @@
+// import java.util.*;
+// public class Solution {
+//     public static boolean binarySearch(int mat[],int target){
+//         int si=0;
+//         int ei=mat.length-1;
+//         while(si<=ei){
+//             int mi=si+(ei-si)/2;
+//             if(mat[mi]==target)return true;
+//             else if(mat[mi]<target)si=mi+1;
+//             else ei=mi-1;
+//         }
+//         return false;
+//     }
+//     public static boolean searchElement(int [][]mat, int target) {
+//         // Write your code here.
+//         int n=mat.length;
+//         int m=mat[0].length;
+//         for(int i=0;i<n;i++){
+//             if(mat[i][0]<=target&&target<=mat[i][m-1]){
+//                 if(binarySearch(mat[i],target))return true;
+//             }
+//         }
+//         return false;
+//     }
+// }
+
+
+
 import java.util.*;
 public class Solution {
-    public static boolean binarySearch(int mat[],int target){
-        int si=0;
-        int ei=mat.length-1;
-        while(si<=ei){
-            int mi=si+(ei-si)/2;
-            if(mat[mi]==target)return true;
-            else if(mat[mi]<target)si=mi+1;
-            else ei=mi-1;
-        }
-        return false;
-    }
     public static boolean searchElement(int [][]mat, int target) {
         // Write your code here.
-        int n=mat.length;
-        int m=mat[0].length;
-        for(int i=0;i<n;i++){
-            if(mat[i][0]<=target&&target<=mat[i][m-1]){
-                if(binarySearch(mat[i],target))return true;
-            }
+        int row=0;
+        int col=mat[0].length-1;
+        while(row<mat.length&&col>=0){
+            if(mat[row][col]==target)return true;
+            else if(mat[row][col]<target)row++;
+            else col--;
         }
         return false;
     }
