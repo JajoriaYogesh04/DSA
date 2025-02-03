@@ -1,0 +1,42 @@
+import java.util.ArrayList;
+
+public class Solution
+{
+	public static int upperbound(ArrayList<Integer>arr,int m,int target){
+		int si=0;
+		int ei=m-1;
+		while(si<=ei){
+			int mi=si+(ei-si)/2;
+			if(arr.get(mi)<=target)si=mi+1;
+			else ei=mi-1;
+		}
+		return si;
+	}
+	public static int countsmaller(ArrayList<ArrayList<Integer>>matrix,int m,int n,int mid){
+		int count=0;
+		for(int i=0;i<n;i++){
+			count+=upperbound(matrix.get(i),m,mid);
+		}
+		return count;
+	}
+	public static int getMedian(ArrayList<ArrayList<Integer>> matrix)
+	{
+		// Write your code here.
+		int n=matrix.size();
+		int m=matrix.get(0).size();
+		int min=Integer.MAX_VALUE;
+		int max=Integer.MIN_VALUE;
+		for(int i=0;i<n;i++){
+			min=Math.min(min,matrix.get(i).get(0));
+			max=Math.max(max,matrix.get(i).get(m-1));
+		}
+		int req=(n*m)/2;
+		while(min<=max){
+			int mid=min+(max-min)/2;
+			int smallmid=countsmaller(matrix,m,n,mid);
+			if(smallmid<=req)min=mid+1;
+			else max=mid-1;
+		}
+		return min;
+	}
+}
