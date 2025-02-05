@@ -35,33 +35,74 @@
 
 
 
-import java.util.*;
+// import java.util.*;
+// public class Solution 
+// {
+// 	public static String reverseString(String str) 
+// 	{
+// 		//Write your code here
+// 		Stack<String>s=new Stack<>();
+// 		String word="";
+// 		int n=str.length();
+// 		for(int i=0;i<n;i++){
+// 			if(str.charAt(i)==' '){
+// 				s.push(word);
+// 				word="";
+// 			}
+// 			else{
+// 				word+=str.charAt(i);
+// 			}
+// 		}
+// 		s.push(word);
+// 		String rev="";
+// 		while(s.size()!=1){
+// 			String top=s.pop();
+// 			if(!top.equals("")){
+// 				rev+=top+" ";
+// 			}
+// 		}
+// 		rev+=s.pop();
+// 		return rev;
+// 	}
+// }
+
+
+
 public class Solution 
 {
 	public static String reverseString(String str) 
 	{
 		//Write your code here
-		Stack<String>s=new Stack<>();
-		String word="";
-		int n=str.length();
-		for(int i=0;i<n;i++){
-			if(str.charAt(i)==' '){
-				s.push(word);
-				word="";
+		int si=0;
+		int ei=str.length()-1;
+		String temp="";
+		String ans="";
+		while(si<=ei){
+			char ch=str.charAt(si);
+			if(ch!=' '){
+				temp+=ch;
+			}
+			else if(ch==' '){
+				if(!temp.equals("")){
+					if(!ans.equals("")){
+						ans=temp+" "+ans;
+					}
+					else{
+						ans=temp;
+					}
+					temp="";
+				}
+			}
+			si++;
+		}
+		if(!temp.equals("")){
+			if(!ans.equals("")){
+				ans=temp+" "+ans;
 			}
 			else{
-				word+=str.charAt(i);
+				ans=temp;
 			}
 		}
-		s.push(word);
-		String rev="";
-		while(s.size()!=1){
-			String top=s.pop();
-			if(!top.equals("")){
-				rev+=top+" ";
-			}
-		}
-		rev+=s.pop();
-		return rev;
+		return ans;
 	}
 }
