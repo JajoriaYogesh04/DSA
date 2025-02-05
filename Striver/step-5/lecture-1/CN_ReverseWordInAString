@@ -1,34 +1,67 @@
+// import java.util.*;
+// public class Solution 
+// {
+// 	public static String reverseString(String str) 
+// 	{
+// 		//Write your code here
+// 		Stack<Character>s=new Stack<>();
+// 		StringBuilder sb=new StringBuilder("");
+// 		int n=str.length();
+// 		for(int i=n-1;i>=0;i--){
+// 			char ch=str.charAt(i);
+// 			if(ch==' '&&s.isEmpty()){
+// 				continue;
+// 			}
+// 			if(ch!=' '){
+// 				s.push(ch);
+// 			}
+// 			else{
+// 				StringBuilder word=new StringBuilder(" ");
+// 				while(!s.isEmpty()){
+// 					word.append(s.pop());
+// 				}
+// 				sb.append(word);
+// 			}
+// 		}
+// 		StringBuilder word=new StringBuilder(" ");
+// 			while(!s.isEmpty()){
+// 				word.append(s.pop());
+// 			}
+// 		sb.append(word);
+// 		String st=sb.toString();
+// 		return st.substring(1);
+// 	}
+// }
+
+
+
 import java.util.*;
 public class Solution 
 {
 	public static String reverseString(String str) 
 	{
 		//Write your code here
-		Stack<Character>s=new Stack<>();
-		StringBuilder sb=new StringBuilder("");
+		Stack<String>s=new Stack<>();
+		String word="";
 		int n=str.length();
-		for(int i=n-1;i>=0;i--){
-			char ch=str.charAt(i);
-			if(ch==' '&&s.isEmpty()){
-				continue;
-			}
-			if(ch!=' '){
-				s.push(ch);
+		for(int i=0;i<n;i++){
+			if(str.charAt(i)==' '){
+				s.push(word);
+				word="";
 			}
 			else{
-				StringBuilder word=new StringBuilder(" ");
-				while(!s.isEmpty()){
-					word.append(s.pop());
-				}
-				sb.append(word);
+				word+=str.charAt(i);
 			}
 		}
-		StringBuilder word=new StringBuilder(" ");
-			while(!s.isEmpty()){
-				word.append(s.pop());
+		s.push(word);
+		String rev="";
+		while(s.size()!=1){
+			String top=s.pop();
+			if(!top.equals("")){
+				rev+=top+" ";
 			}
-		sb.append(word);
-		String st=sb.toString();
-		return st.substring(1);
+		}
+		rev+=s.pop();
+		return rev;
 	}
 }
