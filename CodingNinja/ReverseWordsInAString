@@ -1,0 +1,38 @@
+public class Solution 
+{
+	public static String reverseString(String str) 
+	{
+		//Write your code here
+		int si=0;
+		int ei=str.length()-1;
+		String temp="";
+		String ans="";
+		while(si<=ei){
+			char ch=str.charAt(si);
+			if(ch!=' '){
+				temp+=ch;
+			}
+			else if(ch==' '){
+				if(!temp.equals("")){
+					if(!ans.equals("")){
+						ans=temp+" "+ans;
+					}
+					else{
+						ans=temp;
+					}
+					temp="";
+				}
+			}
+			si++;
+		}
+		if(!temp.equals("")){
+			if(!ans.equals("")){
+				ans=temp+" "+ans;
+			}
+			else{
+				ans=temp;
+			}
+		}
+		return ans;
+	}
+}
