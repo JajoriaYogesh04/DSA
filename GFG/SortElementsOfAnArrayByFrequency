@@ -1,0 +1,33 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+    public static void runTest(Scanner sc){
+        int n=sc.nextInt();
+        HashMap<Integer,Integer>map=new HashMap<>();
+        for(int i=0;i<n;i++){
+            int num=sc.nextInt();
+            if(!map.containsKey(num))map.put(num,1);
+            else map.put(num,map.get(num)+1);
+        }
+        ArrayList<Integer>list=new ArrayList<>(map.keySet());
+        list.sort((obj1,obj2)->map.get(obj2)-map.get(obj1));
+        for(int i:list){
+            for(int j=0;j<map.get(i);j++){
+                System.out.print(i+" ");
+            }
+        }
+        System.out.println();
+    }
+    public static void main (String[] args)
+	{
+	    //code
+	    Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+	    for(int i=0;i<t;i++){
+	        runTest(sc);
+	    }
+	    sc.close();
+	}
+}
