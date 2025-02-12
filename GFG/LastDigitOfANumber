@@ -1,11 +1,24 @@
-//Back-end complete function Template for Java
-import java.util.*;
+// //Back-end complete function Template for Java
+// import java.util.*;
 
-public class Main {
-    public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        // Print the last digit
-        System.out.print(Math.abs(n%10));
-    }
+// public class Main {
+//     public static void main(String args[]) {
+//         Scanner sc = new Scanner(System.in);
+//         int n = sc.nextInt();
+//         // Print the last digit
+//         System.out.print(Math.abs(n%10));
+//     }
+// }
+
+
+
+//User function Template for Java
+
+public static void utility(int n){
+
+    //just complete below statement
+    int ans = Math.abs(n%10);
+
+    //below statement print the result
+    System.out.println(ans);
 }
